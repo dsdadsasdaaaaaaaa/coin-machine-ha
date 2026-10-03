@@ -8,13 +8,14 @@ It never bids, buys or messages anyone. Facebook Marketplace and similar sites s
 
 The app's image is private, so Home Assistant needs a read-only GitHub token to download it. You set this up once.
 
-1. **Make the token.** On GitHub, open **Settings > Developer settings > Personal access tokens > Tokens (classic) > Generate new token (classic)**. Name it "Home Assistant", pick an expiry, tick only **read:packages**, and generate it. Copy the token; GitHub shows it once.
-2. **Give it to Home Assistant.** Open **Settings > Add-ons > Add-on store**, open the menu (three dots, top right) and choose **Registries**. Add a registry with server `ghcr.io`, your GitHub user name, and the token as the password.
-3. **Add the add-on listing.** In the same menu choose **Repositories**, add `https://github.com/dsdadsasdaaaaaaaa/coin-machine-ha` and close the dialog.
-4. Find **Coin Machine** in the store (refresh the page if it does not appear) and choose **Install**.
-5. On the **Configuration** tab, set the options below and choose **Save**.
-6. On the **Info** tab, turn on **Watchdog**, then choose **Start**.
-7. Open the **Log** tab and wait for the line that says the server is ready.
+1. [Create a GitHub token](https://github.com/settings/tokens/new?scopes=read:packages&description=Home%20Assistant%20Coin%20Machine). Only **read:packages** is ticked: pick an expiry, choose **Generate token** and copy it (GitHub shows it once).
+2. [Open the add-on store](https://my.home-assistant.io/redirect/supervisor_store/), then the menu (three dots, top right) > **Registries**. Add server `ghcr.io`, your GitHub user name, and the token as the password.
+3. [Add the Coin Machine repository to Home Assistant](https://my.home-assistant.io/redirect/supervisor_add_addon_repository/?repository_url=https%3A%2F%2Fgithub.com%2Fdsdadsasdaaaaaaaa%2Fcoin-machine-ha) and confirm.
+4. [Open the Coin Machine add-on](https://my.home-assistant.io/redirect/supervisor_addon/?addon=53ba94f3_coin_machine&repository_url=https%3A%2F%2Fgithub.com%2Fdsdadsasdaaaaaaaa%2Fcoin-machine-ha) and choose **Install**.
+5. Turn on **Watchdog** and choose **Start**.
+6. Copy the access password from the **Log** tab, choose **Open web UI** and sign in.
+
+Nothing on the **Configuration** tab is required. A Reddit hunt is added on the first start and brings in live sale posts every 30 minutes with no keys. To go further, paste keys in the app's **Settings** page (or on the Configuration tab): an [Anthropic API key](https://console.anthropic.com/settings/keys) for photo analysis and deal reports, and [eBay keys](https://developer.ebay.com/my/keys) for eBay hunts.
 
 If the install fails with an "unauthorized" or "denied" error, the registry entry is missing or the token lacks **read:packages** or has expired. Fix it under **Registries** and install again.
 
@@ -22,29 +23,30 @@ Supported hardware: 64-bit Home Assistant systems (`amd64`, such as an Intel NUC
 
 ## Options
 
+You can leave every option as it is.
+
 | Option | What it does |
 |---|---|
-| `access_password` | The password for signing in, at least 8 characters. If you leave it empty, the app creates one on its first start and prints it once in the **Log** tab. |
-| `anthropic_api_key` | Your Claude API key from console.anthropic.com. Needed for photo analysis and deal reports. |
-| `ebay_client_id`, `ebay_client_secret` | Your eBay developer keyset (App ID and Cert ID). Needed for hunts. |
+| `access_password` | The password for signing in, at least 8 characters. If you leave it empty, the app creates one on its first start and shows it in the **Log** tab on every start. |
+| `anthropic_api_key` | Your Claude API key, from the [Anthropic console](https://console.anthropic.com/settings/keys). Needed for photo analysis and deal reports. |
+| `ebay_client_id`, `ebay_client_secret` | Your eBay developer keyset (App ID and Cert ID), from [eBay's developer keys page](https://developer.ebay.com/my/keys). Needed for eBay hunts; the Reddit hunt needs no keys. |
 | `ebay_environment` | `production` for real listings, `sandbox` for eBay's test site. |
-| `pcgs_api_token` | Optional. PCGS certificate and price guide lookups. |
-| `numista_api_key` | Optional. Numista catalogue estimates on world-coin deals, shown as estimates, never as sales. |
-| `notify_service` | The notify service for your phone, such as `mobile_app_pixel_8`. New BUY deals are sent there. Empty means no phone alerts. |
+| `pcgs_api_token` | PCGS certificate and price guide lookups. |
+| `numista_api_key` | Numista catalogue estimates on world-coin deals, shown as estimates, never as sales. |
+| `notify_service` | Leave it empty: the app finds your phone by itself when Home Assistant has exactly one, and its **Settings > Home Assistant** page lists every phone to pick from. Set it only to name a notify service yourself, such as `mobile_app_pixel_8`; a choice made in the app wins over it. |
 | `publish_sensors` | Publish `sensor.coin_machine_*` entities for dashboards and automations. |
-| `frame_ancestors` | Optional. Origins allowed to show the app inside a frame, such as `http://homeassistant.local:8123` for a dashboard webpage card. Empty blocks framing. |
-| `public_url` | Optional. The address you open the app at, such as `http://homeassistant.local:3000`, used for links in phone alerts. Empty uses the address you last signed in from. |
-| `timezone` | Optional. A time zone name such as `Europe/London`. Empty uses Home Assistant's time zone. |
+| `frame_ancestors` | Origins allowed to show the app inside a frame, such as `http://homeassistant.local:8123` for a dashboard webpage card. Empty blocks framing. |
+| `public_url` | The address you open the app at, such as `http://homeassistant.local:3000`, used for links in phone alerts. Empty uses the address you last signed in from. |
+| `timezone` | A time zone name such as `Europe/London`. Empty uses Home Assistant's time zone. |
 
 Keys you leave empty here can be entered later in the app's **Settings** page instead. An option that is set always wins over a key saved in Settings.
 
-The add-on log never shows your keys or password: each secret appears only as "set".
+The add-on log never shows your keys or a password you set: each appears only as "set". A password the app generated is shown there until you set your own.
 
 ## First sign-in
 
-1. On a laptop on the same network as Home Assistant, open `http://<home-assistant-address>:3000`, for example `http://homeassistant.local:3000` or `http://192.168.1.20:3000`. The **Open web UI** button on the add-on's Info tab opens the same page.
+1. On a laptop on the same network as Home Assistant, choose **Open web UI** on the add-on's **Info** tab, or open `http://<home-assistant-address>:3000`, for example `http://homeassistant.local:3000` or `http://192.168.1.20:3000`.
 2. Enter the access password. If you did not set one, copy the generated password from the **Log** tab.
-3. Open **Settings** in the app and check that your keys show as connected.
 
 To change the password later, set `access_password`, save, and restart the add-on.
 
@@ -58,11 +60,9 @@ Away from home, use Home Assistant's own remote access (for example a VPN such a
 
 ## Phone notifications
 
-1. Install the Home Assistant Companion app on your phone and sign in to your Home Assistant.
-2. In Home Assistant, open **Developer tools > Actions** and type `notify.` to see your phone's service, such as `notify.mobile_app_pixel_8`.
-3. Put the part after `notify.` (or the whole name) in `notify_service`, save, and restart the add-on.
+Install the Home Assistant Companion app on your phone and sign in to your Home Assistant. That is all: Coin Machine asks Home Assistant for its notify services, and when there is exactly one phone it sends BUY alerts there by itself. Tapping an alert opens the deal.
 
-When a scheduled hunt finds a new BUY deal, the phone gets a notification. Hunts need the eBay keys.
+With several phones, or none, alerts go to Home Assistant's notification list until you choose. In the app, **Settings > Home Assistant** lists what Home Assistant has: pick one phone, all phones, or the notification list. Nothing is typed. The same page says where alerts go and why, and **Send a test notification** reports the service it called and Home Assistant's answer.
 
 ## Backups
 
@@ -75,4 +75,4 @@ Restoring a Home Assistant backup that includes the add-on brings everything bac
 - **Install fails with "unauthorized" or "denied".** See the end of the Install section: the `ghcr.io` registry entry or its token is missing or expired.
 - **The add-on stops right after starting.** Read the **Log** tab. A line starting with "Coin Machine cannot start" says which option to fix.
 - **The page does not load on the phone.** Check the phone is on the home Wi-Fi, not mobile data, and that the address uses port 3000.
-- **No phone notifications.** Check `notify_service` against **Developer tools > Actions**, and that hunts are running (the app's Hunts page shows the last run).
+- **No phone notifications.** Open **Settings > Home Assistant** in the app: it shows the phones Home Assistant lists and where alerts go. **Send a test notification** names the service it called and Home Assistant's HTTP answer. Check also that hunts are running (the app's Hunts page shows the last run).

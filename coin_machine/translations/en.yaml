@@ -3,15 +3,17 @@ configuration:
     name: Access password
     description: >-
       The password for signing in from your laptop or phone (at least 8 characters).
-      Leave it empty and the app creates one on first start and prints it once in the Log tab.
+      Leave it empty and the app creates one on first start and shows it in the Log tab.
   anthropic_api_key:
     name: Anthropic API key
     description: >-
-      Your Claude API key from console.anthropic.com. Needed for photo analysis and deal reports.
+      Your Claude API key from console.anthropic.com/settings/keys. Needed for photo analysis and deal reports.
       You can also enter it later in the app's Settings page.
   ebay_client_id:
     name: eBay client ID
-    description: The App ID of your eBay developer keyset. Needed for hunts.
+    description: >-
+      The App ID of your eBay developer keyset (developer.ebay.com/my/keys). Needed for eBay hunts;
+      the Reddit hunt needs no keys.
   ebay_client_secret:
     name: eBay client secret
     description: The Cert ID of your eBay developer keyset.
@@ -28,8 +30,9 @@ configuration:
   notify_service:
     name: Phone notify service
     description: >-
-      The Home Assistant notify service for your phone, such as mobile_app_pixel_8
-      (find it under Developer tools, Actions, notify.). New BUY deals are sent there. Leave empty for no phone alerts.
+      Optional: leave it empty. The app finds your phone by itself when Home Assistant has exactly one,
+      and its Settings page lists every phone to pick from. Set a notify service such as mobile_app_pixel_8
+      only to choose one yourself; a choice made in the app wins over it.
   publish_sensors:
     name: Publish sensors
     description: Publish the app's status as sensor.coin_machine_* entities for dashboards and automations.
