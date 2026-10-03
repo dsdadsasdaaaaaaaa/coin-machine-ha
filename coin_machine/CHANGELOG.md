@@ -1,5 +1,12 @@
 # Changelog
 
+## 0.3.2
+
+- **The tour says what to do at every stop.** Each stop that can be used now has one line that says how ("Swipe sideways, or tap Next", "Tap a buyer to rescore the listing", "Drag the slider, or tap − and +"), and that line changes once you have done it. Everything that can be pressed now looks like a button, every stop ends with a link to the next one, and the first board sorts itself.
+- On the tour, a sideways swipe that began on one of the phone screens did nothing, so the row of screens could only be moved from its edges. It now moves from anywhere, and the Previous and Next buttons sit above the row with a count.
+- The tour's progress bar is part of the top bar, so the page no longer shows through it, and on a wide screen each segment carries its stop's name.
+- The tour no longer scrolls sideways on a small phone, and its list of stops no longer overlaps itself in Safari on iPhone.
+
 ## 0.3.1
 
 - With accounts on and an `https` public address, a request that arrives for that address over plain `http` is now sent to `https` before anything else, so a password or a session can never travel unencrypted. Browsers that have visited are told to keep using `https`. Your home network address is unaffected.
