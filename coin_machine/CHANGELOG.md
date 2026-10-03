@@ -1,5 +1,10 @@
 # Changelog
 
+## 0.1.3
+
+- Silver sold by face value is read from the shorthand sellers use, with no "silver" in it: "$5 FV 90% quarters", "$10 face 90%", "$2 FV 40% halves".
+- Lines under a coin heading that follows another metal's section ("Morgans" after "GOLD") are read as that coin, not as the earlier metal, and a line that is only a date under such a heading is no longer dropped.
+
 ## 0.1.2
 
 - One switch for who is buying: "Scored for" in the feed header rescores every listing for a flipper, a stacker or a collector. The feed and the deal page then show that buyer's figure (profit, saving against a dealer, or saving against fair value).
