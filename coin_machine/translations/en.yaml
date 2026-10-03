@@ -44,8 +44,20 @@ configuration:
   public_url:
     name: Public address
     description: >-
-      Optional. The address you open the app at, such as http://homeassistant.local:3000,
-      used for the links in phone alerts. Leave empty to use the address you last signed in from.
+      Optional. The address you open the app at, such as http://homeassistant.local:3000 or
+      https://coins.example.com, used for the links in phone alerts and, with Accounts on, for the link in
+      Home Assistant's sidebar. Leave empty to use the address you last signed in from.
+  accounts:
+    name: Accounts
+    description: >-
+      Turn on to give other people their own Coin Machine at one address. Everyone signs in with a username
+      and a password; you are "owner" with the access password, and you add people on the Accounts page.
+      Each account has its own listings, settings and inventory.
+  share_keys:
+    name: Share my keys with other accounts
+    description: >-
+      Only with Accounts on. Lets other accounts use the Anthropic, eBay, PCGS and Numista keys set here, at
+      your cost. Off, each person enters their own keys in their Settings page.
   timezone:
     name: Time zone
     description: Optional. A time zone name such as Europe/London. Leave empty to use Home Assistant's time zone.

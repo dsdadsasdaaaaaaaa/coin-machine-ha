@@ -1,5 +1,13 @@
 # Changelog
 
+## 0.3.0
+
+- **Accounts.** Turn on the new **Accounts** option and Coin Machine has one address where everyone signs in with a username and a password. Each account is its own Coin Machine, with its own listings, hunts, settings, inventory and keys. You are `owner` with your access password, and you add, switch off and delete accounts on an accounts page. Off by default: nothing changes until you turn it on.
+- **A home page and a tour.** With accounts on, a visitor who is not signed in sees a home page and an interactive tour, with a Sign in button.
+- **A public address.** The documentation has the steps for putting the add-on on your own domain through Cloudflare, with no port opened on your router.
+- New option **Share my keys with other accounts**, off by default: other accounts enter their own AI and eBay keys unless you turn it on.
+- With accounts on, the sidebar entry inside Home Assistant shows a link to that one address instead of the app.
+
 ## 0.2.1
 
 - Steadier inside Home Assistant. On port 3000, an address without the add-on's own path (an old bookmark, a typed address, the link in a phone alert) is now sent on to the full address. Before, the add-on fetched it a second time from itself, which failed now and then: a photo could come back as an error.

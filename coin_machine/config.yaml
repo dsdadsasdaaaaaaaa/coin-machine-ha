@@ -3,7 +3,7 @@
 # `version` must equal package.json's version: the Supervisor pulls `<image>:<version>`,
 # and the release workflow (.github/workflows/addon-image.yml) refuses a tag that disagrees.
 name: Coin Machine
-version: "0.2.1"
+version: "0.3.0"
 slug: coin_machine
 description: AI deal analyst for coin flippers, collectors and dealers. Runs your hunts on a schedule and sends new BUY deals to your phone.
 url: https://github.com/dsdadsasdaaaaaaaa/coin-machine-ha
@@ -17,7 +17,8 @@ boot: auto
 init: false
 # Opens inside Home Assistant (the sidebar, "Open web UI", and the remote address): Home Assistant signs the
 # user in and forwards to this port, which answers only the Supervisor. The app's own port stays available on
-# the home network, behind the access password.
+# the home network, behind the access password. With the `accounts` option on, everyone signs in at one address
+# instead, and this port answers with a link to it.
 ingress: true
 ingress_port: 8099
 # The app lives at <ingress path>/app, not at the ingress root. Home Assistant only routes addresses that have
@@ -49,6 +50,8 @@ options:
   numista_api_key: ""
   notify_service: ""
   publish_sensors: true
+  accounts: false
+  share_keys: false
 schema:
   access_password: password?
   anthropic_api_key: password?
@@ -59,6 +62,8 @@ schema:
   numista_api_key: password?
   notify_service: str?
   publish_sensors: bool
+  accounts: bool
+  share_keys: bool
   frame_ancestors: str?
   public_url: url?
   timezone: str?

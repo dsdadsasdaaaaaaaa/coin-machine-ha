@@ -37,6 +37,8 @@ You can leave every option as it is.
 | `publish_sensors` | Publish `sensor.coin_machine_*` entities for dashboards and automations. |
 | `frame_ancestors` | Origins allowed to show the app inside a frame, such as `http://homeassistant.local:8123` for a dashboard webpage card. Empty blocks framing. |
 | `public_url` | The address you open the app at, such as `http://homeassistant.local:3000`, used for links in phone alerts. Empty uses the address you last signed in from. |
+| `accounts` | Off by default. Turn it on to give other people their own Coin Machine at one address, each with a username and a password. See **Accounts** below. |
+| `share_keys` | Only with `accounts` on. Lets other accounts use the Anthropic, eBay, PCGS and Numista keys set here, at your cost. Off, each person enters their own keys in their Settings page. |
 | `timezone` | A time zone name such as `Europe/London`. Empty uses Home Assistant's time zone. |
 
 Keys you leave empty here can be entered later in the app's **Settings** page instead. An option that is set always wins over a key saved in Settings.
@@ -50,6 +52,44 @@ The add-on log never shows your keys or a password you set: each appears only as
 **By its own address**, on your home network only: `http://<home-assistant-address>:3000`, for example `http://192.168.1.20:3000`. This way asks for the access password: enter the one you set, or copy the generated one from the **Log** tab. To change it, set `access_password`, save, and restart the add-on.
 
 Only administrators of your Home Assistant see Coin Machine in the sidebar and can open it this way. Everyone else needs its own address and the access password.
+
+## Accounts: one address for several people
+
+Coin Machine holds one person's deals, settings and keys. Turn **Accounts** on and each person gets their own, behind one address and a sign-in.
+
+1. On the **Configuration** tab turn on **Accounts**. Set **Public address** to the address people will open, for example `https://coins.example.com` (see the next section for how to get one). Save, then restart the add-on.
+2. Open that address, or `http://<home-assistant-address>:3000` at home, and choose **Sign in**. You are `owner`; your password is the access password.
+3. In the app go to **Settings > Access** and open the **accounts page**. Add a username. The page then shows the address, the username and a password to send to that person. The password is shown that one time.
+
+What to know:
+
+- **Each account is separate.** Its own listings, hunts, settings, inventory and keys. Nobody sees anyone else's, including you.
+- **A person's Coin Machine opens when they sign in** and closes after 30 minutes without use, so their hunts run while they are using it. Yours runs all the time, as before.
+- **Memory.** Each open one uses about 300 MB. Up to six are open at the same time; a seventh person is asked to wait a minute.
+- **Keys.** Other accounts enter their own Anthropic and eBay keys in their Settings page. With **Share my keys with other accounts** on they use yours, and what they spend is billed to you.
+- **Yours only:** phone alerts, Home Assistant sensors and the options on this add-on's Configuration tab.
+- **Inside Home Assistant** the sidebar entry now shows a link to the public address instead of the app itself: everyone, you included, signs in at the one address.
+- **Passwords.** A person changes their own on their account page. You can give them a new one, switch an account off, or delete it with its data, on the accounts page. Your own password stays the `access_password` option.
+
+To go back, turn **Accounts** off and restart. Your own data is untouched either way; other accounts' data stays on disk until you delete the accounts.
+
+### A public address on your own domain (Cloudflare, free)
+
+This puts the add-on at an address like `https://coins.example.com` without opening a port on your router. You need a domain whose DNS is at Cloudflare (a domain bought from Cloudflare already is).
+
+1. [Open the add-on store](https://my.home-assistant.io/redirect/supervisor_store/), then the menu > **Repositories**, and add `https://github.com/homeassistant-apps/repository`. Install **Cloudflared** from it.
+2. On Cloudflared's **Configuration** tab, leave **External Home Assistant Hostname** empty. Under **Additional Hosts** choose **Add** and enter:
+
+   - hostname: `coins.example.com` (your own domain or a subdomain of it)
+   - service: `http://53ba94f3-coin-machine:3000`
+
+   Choose **Add**, then **Save**.
+3. Start Cloudflared and open its **Log** tab. It prints a Cloudflare link: open it, sign in to Cloudflare, pick your domain and authorize. The add-on then creates the tunnel and the DNS record by itself.
+4. Open `https://coins.example.com`. You should see Coin Machine's home page.
+
+`53ba94f3-coin-machine` is this add-on's name inside Home Assistant. If the page shows a Cloudflare error 502, use your Home Assistant's own address instead, for example `http://192.168.1.20:3000`.
+
+Turn **Accounts** on before you do this. With it off, the public address would lead straight to your own Coin Machine's password page.
 
 ## Use it on your phone
 
@@ -75,4 +115,6 @@ Restoring a Home Assistant backup that includes the add-on brings everything bac
 - **Install fails with "unauthorized" or "denied".** See the end of the Install section: the `ghcr.io` registry entry or its token is missing or expired.
 - **The add-on stops right after starting.** Read the **Log** tab. A line starting with "Coin Machine cannot start" says which option to fix.
 - **The page does not load on the phone.** Check the phone is on the home Wi-Fi, not mobile data, and that the address uses port 3000.
+- **A public address shows a Cloudflare error.** 1033 means the Cloudflared add-on is not running or not signed in: read its **Log** tab. 502 means it cannot reach Coin Machine: check this add-on is started and the `service` line is right.
+- **"Too many Coin Machines are open right now."** Six accounts are in use at once. It clears when one has been unused for a couple of minutes.
 - **No phone notifications.** Open **Settings > Home Assistant** in the app: it shows the phones Home Assistant lists and where alerts go. **Send a test notification** names the service it called and Home Assistant's HTTP answer. Check also that hunts are running (the app's Hunts page shows the last run).
