@@ -3,7 +3,7 @@
 # `version` must equal package.json's version: the Supervisor pulls `<image>:<version>`,
 # and the release workflow (.github/workflows/addon-image.yml) refuses a tag that disagrees.
 name: Coin Machine
-version: "0.1.1"
+version: "0.1.2"
 slug: coin_machine
 description: AI deal analyst for coin flippers, collectors and dealers. Runs your hunts on a schedule and sends new BUY deals to your phone.
 url: https://github.com/dsdadsasdaaaaaaaa/coin-machine-ha
