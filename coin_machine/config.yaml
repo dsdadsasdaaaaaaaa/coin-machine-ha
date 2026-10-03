@@ -3,7 +3,7 @@
 # `version` must equal package.json's version: the Supervisor pulls `<image>:<version>`,
 # and the release workflow (.github/workflows/addon-image.yml) refuses a tag that disagrees.
 name: Coin Machine
-version: "0.1.3"
+version: "0.2.0"
 slug: coin_machine
 description: AI deal analyst for coin flippers, collectors and dealers. Runs your hunts on a schedule and sends new BUY deals to your phone.
 url: https://github.com/dsdadsasdaaaaaaaa/coin-machine-ha
@@ -15,11 +15,22 @@ startup: application
 boot: auto
 # The image runs its own init (tini) as PID 1.
 init: false
+# Opens inside Home Assistant (the sidebar, "Open web UI", and the remote address): Home Assistant signs the
+# user in and forwards to this port, which answers only the Supervisor. The app's own port stays available on
+# the home network, behind the access password.
+ingress: true
+ingress_port: 8099
+# The app lives at <ingress path>/app, not at the ingress root. Home Assistant only routes addresses that have
+# something after the ingress token's slash, and the app's own home address has no trailing slash.
+ingress_entry: app
+# Uploads and long answers pass through without being buffered.
+ingress_stream: true
+panel_icon: mdi:hand-coin
+panel_title: Coin Machine
 ports:
   3000/tcp: 3000
 ports_description:
-  3000/tcp: Coin Machine web interface
-webui: "http://[HOST]:[PORT:3000]"
+  3000/tcp: Coin Machine on your home network (asks for the access password)
 watchdog: "http://[HOST]:[PORT:3000]/api/health"
 # Lets the app send phone notifications and publish sensor.coin_machine_* states.
 homeassistant_api: true

@@ -13,7 +13,7 @@ The app's image is private, so Home Assistant needs a read-only GitHub token to 
 3. [Add the Coin Machine repository to Home Assistant](https://my.home-assistant.io/redirect/supervisor_add_addon_repository/?repository_url=https%3A%2F%2Fgithub.com%2Fdsdadsasdaaaaaaaa%2Fcoin-machine-ha) and confirm.
 4. [Open the Coin Machine add-on](https://my.home-assistant.io/redirect/supervisor_addon/?addon=53ba94f3_coin_machine&repository_url=https%3A%2F%2Fgithub.com%2Fdsdadsasdaaaaaaaa%2Fcoin-machine-ha) and choose **Install**.
 5. Turn on **Watchdog** and choose **Start**.
-6. Copy the access password from the **Log** tab, choose **Open web UI** and sign in.
+6. Choose **Open web UI**, or turn on **Show in sidebar** and open **Coin Machine** from Home Assistant's sidebar. Home Assistant has already signed you in, so no password is asked.
 
 Nothing on the **Configuration** tab is required. A Reddit hunt is added on the first start and brings in live sale posts every 30 minutes with no keys. To go further, paste keys in the app's **Settings** page (or on the Configuration tab): an [Anthropic API key](https://console.anthropic.com/settings/keys) for photo analysis and deal reports, and [eBay keys](https://developer.ebay.com/my/keys) for eBay hunts.
 
@@ -43,20 +43,20 @@ Keys you leave empty here can be entered later in the app's **Settings** page in
 
 The add-on log never shows your keys or a password you set: each appears only as "set". A password the app generated is shown there until you set your own.
 
-## First sign-in
+## Open it
 
-1. On a laptop on the same network as Home Assistant, choose **Open web UI** on the add-on's **Info** tab, or open `http://<home-assistant-address>:3000`, for example `http://homeassistant.local:3000` or `http://192.168.1.20:3000`.
-2. Enter the access password. If you did not set one, copy the generated password from the **Log** tab.
+**Inside Home Assistant** (the usual way): choose **Open web UI** on the add-on's **Info** tab, or turn on **Show in sidebar** there and open **Coin Machine** from the sidebar. It opens wherever Home Assistant does: on your home network, in the Home Assistant app on your phone, and away from home through your remote address (Home Assistant Cloud, for example). Home Assistant signs you in, so Coin Machine asks for no password of its own.
 
-To change the password later, set `access_password`, save, and restart the add-on.
+**By its own address**, on your home network only: `http://<home-assistant-address>:3000`, for example `http://192.168.1.20:3000`. This way asks for the access password: enter the one you set, or copy the generated one from the **Log** tab. To change it, set `access_password`, save, and restart the add-on.
+
+Only administrators of your Home Assistant see Coin Machine in the sidebar and can open it this way. Everyone else needs its own address and the access password.
 
 ## Use it on your phone
 
-1. Connect the phone to your home Wi-Fi and open `http://<home-assistant-address>:3000` in Safari (iPhone) or Chrome (Android).
-2. Sign in.
-3. Add it to your home screen: in Safari, **Share > Add to Home Screen**; in Chrome, the menu then **Add to Home screen**.
+- **With the Home Assistant app**: open **Coin Machine** from the sidebar. It works at home and away, with nothing more to set up.
+- **As its own home-screen icon**, on your home Wi-Fi: open `http://<home-assistant-address>:3000` in Safari (iPhone) or Chrome (Android), sign in with the access password, then **Share > Add to Home Screen** (Safari) or the menu then **Add to Home screen** (Chrome).
 
-Away from home, use Home Assistant's own remote access (for example a VPN such as the Tailscale add-on). Do not forward port 3000 on your router: the app is served over plain HTTP and is meant for your home network.
+Do not forward port 3000 on your router: that address is served over plain HTTP and is meant for your home network. Away from home, open it inside Home Assistant.
 
 ## Phone notifications
 

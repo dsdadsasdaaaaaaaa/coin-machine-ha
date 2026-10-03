@@ -50,4 +50,6 @@ configuration:
     name: Time zone
     description: Optional. A time zone name such as Europe/London. Leave empty to use Home Assistant's time zone.
 network:
-  3000/tcp: Web interface port. Open http://<your Home Assistant address>:<this port> on your laptop or phone.
+  3000/tcp: >-
+    Coin Machine's own address on your home network, which asks for the access password:
+    http://<your Home Assistant address>:<this port>. You do not need it to open the app inside Home Assistant.

@@ -1,5 +1,11 @@
 # Changelog
 
+## 0.2.0
+
+- Coin Machine now opens inside Home Assistant: use **Open web UI**, or turn on **Show in sidebar** and pick it from the sidebar. It works wherever Home Assistant does, including the phone app and your remote address (Home Assistant Cloud), and asks for no password there because Home Assistant has already signed you in.
+- **Open web UI** no longer hangs when Home Assistant is opened through a remote address. It used to point at port 3000, which a remote address does not carry.
+- The address on your home network (`http://<home-assistant-address>:3000`) still works and still asks for the access password.
+
 ## 0.1.3
 
 - Silver sold by face value is read from the shorthand sellers use, with no "silver" in it: "$5 FV 90% quarters", "$10 face 90%", "$2 FV 40% halves".
