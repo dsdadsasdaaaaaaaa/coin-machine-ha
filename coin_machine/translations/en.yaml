@@ -1,0 +1,50 @@
+configuration:
+  access_password:
+    name: Access password
+    description: >-
+      The password for signing in from your laptop or phone (at least 8 characters).
+      Leave it empty and the app creates one on first start and prints it once in the Log tab.
+  anthropic_api_key:
+    name: Anthropic API key
+    description: >-
+      Your Claude API key from console.anthropic.com. Needed for photo analysis and deal reports.
+      You can also enter it later in the app's Settings page.
+  ebay_client_id:
+    name: eBay client ID
+    description: The App ID of your eBay developer keyset. Needed for hunts.
+  ebay_client_secret:
+    name: eBay client secret
+    description: The Cert ID of your eBay developer keyset.
+  ebay_environment:
+    name: eBay environment
+    description: Use production for real listings. Sandbox is eBay's test site with fake listings.
+  pcgs_api_token:
+    name: PCGS API token
+    description: Optional. Lets the app look up PCGS certificate numbers and price guide values.
+  numista_api_key:
+    name: Numista API key
+    description: >-
+      Optional. Shows Numista catalogue estimates on world-coin deals, labelled as estimates, never as sales.
+  notify_service:
+    name: Phone notify service
+    description: >-
+      The Home Assistant notify service for your phone, such as mobile_app_pixel_8
+      (find it under Developer tools, Actions, notify.). New BUY deals are sent there. Leave empty for no phone alerts.
+  publish_sensors:
+    name: Publish sensors
+    description: Publish the app's status as sensor.coin_machine_* entities for dashboards and automations.
+  frame_ancestors:
+    name: Allowed embedding origins
+    description: >-
+      Optional. Space-separated origins allowed to show the app inside a frame,
+      for example http://homeassistant.local:8123 for a dashboard webpage card. Leave empty to block framing.
+  public_url:
+    name: Public address
+    description: >-
+      Optional. The address you open the app at, such as http://homeassistant.local:3000,
+      used for the links in phone alerts. Leave empty to use the address you last signed in from.
+  timezone:
+    name: Time zone
+    description: Optional. A time zone name such as Europe/London. Leave empty to use Home Assistant's time zone.
+network:
+  3000/tcp: Web interface port. Open http://<your Home Assistant address>:<this port> on your laptop or phone.

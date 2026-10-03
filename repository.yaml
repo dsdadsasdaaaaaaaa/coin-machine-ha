@@ -1,0 +1,8 @@
+# Home Assistant add-on repository manifest.
+# The Supervisor reads repository.yaml from the root of the git repository it is
+# given, then finds every add-on folder (here, coin_machine/). This folder is
+# published as the public repository coin-machine-ha by scripts/publish-addon.mjs;
+# the app's code and images stay private. See docs/DEPLOY.md.
+name: Coin Machine add-ons
+url: https://github.com/dsdadsasdaaaaaaaa/coin-machine-ha
+maintainer: Levi Silverberg

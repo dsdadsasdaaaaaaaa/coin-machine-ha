@@ -1,0 +1,51 @@
+# Home Assistant add-on manifest for Coin Machine.
+# Reference: https://developers.home-assistant.io/docs/add-ons/configuration
+# `version` must equal package.json's version: the Supervisor pulls `<image>:<version>`,
+# and the release workflow (.github/workflows/addon-image.yml) refuses a tag that disagrees.
+name: Coin Machine
+version: "0.1.0"
+slug: coin_machine
+description: AI deal analyst for coin flippers, collectors and dealers. Runs your hunts on a schedule and sends new BUY deals to your phone.
+url: https://github.com/dsdadsasdaaaaaaaa/coin-machine-ha
+arch:
+  - aarch64
+  - amd64
+image: ghcr.io/dsdadsasdaaaaaaaa/coin-machine-{arch}
+startup: application
+boot: auto
+# The image runs its own init (tini) as PID 1.
+init: false
+ports:
+  3000/tcp: 3000
+ports_description:
+  3000/tcp: Coin Machine web interface
+webui: "http://[HOST]:[PORT:3000]"
+watchdog: "http://[HOST]:[PORT:3000]/api/health"
+# Lets the app send phone notifications and publish sensor.coin_machine_* states.
+homeassistant_api: true
+# The add-on is stopped while Home Assistant copies /data, so the SQLite
+# database is never copied half-written.
+backup: cold
+options:
+  access_password: ""
+  anthropic_api_key: ""
+  ebay_client_id: ""
+  ebay_client_secret: ""
+  ebay_environment: production
+  pcgs_api_token: ""
+  numista_api_key: ""
+  notify_service: ""
+  publish_sensors: true
+schema:
+  access_password: password?
+  anthropic_api_key: password?
+  ebay_client_id: str?
+  ebay_client_secret: password?
+  ebay_environment: list(production|sandbox)
+  pcgs_api_token: password?
+  numista_api_key: password?
+  notify_service: str?
+  publish_sensors: bool
+  frame_ancestors: str?
+  public_url: url?
+  timezone: str?
