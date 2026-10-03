@@ -1,5 +1,10 @@
 # Changelog
 
+## 0.2.1
+
+- Steadier inside Home Assistant. On port 3000, an address without the add-on's own path (an old bookmark, a typed address, the link in a phone alert) is now sent on to the full address. Before, the add-on fetched it a second time from itself, which failed now and then: a photo could come back as an error.
+- The health check that Home Assistant's Watchdog uses no longer goes through that second fetch.
+
 ## 0.2.0
 
 - Coin Machine now opens inside Home Assistant: use **Open web UI**, or turn on **Show in sidebar** and pick it from the sidebar. It works wherever Home Assistant does, including the phone app and your remote address (Home Assistant Cloud), and asks for no password there because Home Assistant has already signed you in.
