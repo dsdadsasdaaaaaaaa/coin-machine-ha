@@ -59,6 +59,12 @@ configuration:
       Only with Accounts on. Lets other accounts use the Anthropic, eBay, PCGS and Numista keys set here, at
       your cost. They are then shown no key settings and cannot change them. Off, each person enters their own
       keys in their Settings page.
+  currency:
+    name: Currency people here buy in
+    description: >-
+      Optional. USD or CAD. With CAD, every account can type a listing's price in Canadian dollars and sees
+      Canadian dollars beside the figures to act on, at a daily rate. Coin Machine's own figures stay US dollars.
+      Each account can change this for itself in Settings, Costs. Leave empty for US dollars.
   timezone:
     name: Time zone
     description: Optional. A time zone name such as Europe/London. Leave empty to use Home Assistant's time zone.

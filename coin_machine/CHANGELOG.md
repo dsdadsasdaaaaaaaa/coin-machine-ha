@@ -1,5 +1,18 @@
 # Changelog
 
+## 0.6.0
+
+For people who buy in Canada. Coin Machine still works in US dollars (spot, melt and most listings are priced in them), and now meets Canadian dollars at the edges.
+
+- **A new option, Currency people here buy in** (Configuration tab, under the optional options): `USD` or `CAD`. With `CAD`, every account starts in Canadian dollars. Each account can also choose for itself in **Settings, Costs**.
+- **Type a price in Canadian dollars.** On Analyze, Lot X-ray and Capture a **C$ / US$** switch sits under the asking price. A Canadian price and its shipping are converted at the day's rate before anything is scored, and the deal page keeps what the listing said ("C$285.00 as listed"). A price the AI reads from a screenshot, or that comes with a shared page, is Canadian when the page marks it (C$, CA$, CAD).
+- **Canadian dollars beside the figures you act on.** The deal page shows the asking price, the all-in cost and the max price in Canadian dollars beside the US figures; the Melt page does the same for spot and for the tally's offer, walk-away number and melt. The top bar shows the rate.
+- **The rate** is a daily reference rate, not a bank's. If it cannot be read, the last one is used; with none ever read, Canadian figures are simply not shown and a Canadian price is refused rather than guessed.
+- **Interac e-Transfer** is now a payment method, treated like Zelle: no way back if the coin never ships.
+- **Kijiji** is named in the marketplace list.
+- What you paid and what you sold for are still entered in US dollars, and eBay hunts still search eBay.com only. `docs/CANADA.md` in the repository lists what is left.
+- The public pages now say their figures are US dollars.
+
 ## 0.5.4
 
 - **The public pages say Coin Machine is private.** Where the home page, the tour and the sign-in page said "Accounts are by invitation", they now say it plainly: private for now, the person who runs this Coin Machine makes each account themselves and only for people they have agreed it with directly, and there is no sign-up, no waiting list and no public price. The tour's question about getting in is now "How do I get an account?" and gives that answer.
