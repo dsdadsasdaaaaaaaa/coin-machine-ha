@@ -1,5 +1,22 @@
 # Changelog
 
+## 0.5.0
+
+Easier to use, everywhere. Nothing was removed; what you came for is now first, and the rest opens when you ask for it.
+
+- **Every page starts with what it is for.** On a phone the first listing, the verdict, the first field or the first hunt is on the first screen. Tiles of figures became one line with **All figures**, notices became one line with **More**, and each page has one gold button: the next thing to do.
+- **A deal page is three screens, not twelve.** The verdict, the action, the max price, the expected profit and the reasons come first. The math, what can go wrong, fair value, sold comps, the AI report and the rest are sections that open, each showing its key figure while closed ("All-in $285, nets $403"). A section with a warning in it opens by itself. Once you scroll, the verdict and **Add to pipeline** stay at the top.
+- **Settings is a list.** Each section shows what it is set to ("Flip for profit, up to $5,000 a deal") and opens on a tap. A link to a section opens it.
+- **A "?" beside the words a newcomer will not know** (max price, all-in cost, fair value, score, low case, confidence, melt, sold comps, AI estimate only, walk-away number): tap it for one to three plain sentences. One wording for the whole app.
+- **Bigger things to press on a phone.** Every button, tab, switch, menu and field is at least 44 px on a touch screen, nothing is set under 12 px, a row shows its one main action by name with the rest in a "..." menu of named actions, and nothing explains itself only when a mouse hovers over it.
+- **One name per thing.** Max price (not max buy price), Scored for (not goal or profile), listing, hunt, verdict, sold comps. The downloaded spreadsheets use the same names.
+- **Analyze**: the photo button and the fields come first; single listing or lot is chosen after. **Hunts**: a new hunt asks for what matters and keeps the rest under More options. **Advisor**: example questions sit above the box and fill it when tapped. **Melt**: the tally comes first, and its walk-away number explains itself.
+- **Handing someone their account.** Adding an account now shows one message to send, with **Email it** and **Text it**, and says plainly that the iPhone invitation is a second step you send from App Store Connect, for which you need the email address of their Apple ID (the message asks for it). If no public address is set, the page warns that the address in the message only works on your network. **New password** asks before it acts.
+- **A page about the iPhone app** at `/app`, open to anyone: how to install it through TestFlight, what it adds, and that any browser works until then. The message to a new person links to it.
+- **Someone on your keys reads plain words.** When eBay or the AI refuses a request, another account is told what happened and to let you know, not about keys, calls or quotas. Your own messages keep their detail.
+- The iPhone app can print: the show kit and the melt table open the phone's print sheet. This needs the next build of the app from TestFlight.
+- Fixed: the "Add item" form could scroll sideways on a phone; a dialog's close button sat on its first line of text.
+
 ## 0.4.1
 
 - **What another account is told about its data is now true for it.** Someone signed in to your Coin Machine from their own phone was told their listings were "stored on this computer", shown this server's folders and free disk space, and given commands only you can run. An account other than yours now reads that its data is kept in its own Coin Machine, apart from every other account's, sees no file paths, and is told that restoring a backup is done on the server by its owner. Its own backups, downloads and diagnostics are still there. Your own pages are unchanged.

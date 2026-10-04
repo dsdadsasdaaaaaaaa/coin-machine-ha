@@ -58,8 +58,9 @@ Only administrators of your Home Assistant see Coin Machine in the sidebar and c
 Coin Machine holds one person's deals, settings and keys. Turn **Accounts** on and each person gets their own, behind one address and a sign-in.
 
 1. On the **Configuration** tab turn on **Accounts**. Set **Public address** to the address people will open, for example `https://coins.example.com` (see the next section for how to get one). Save, then restart the add-on.
-2. Open that address, or `http://<home-assistant-address>:3000` at home, and choose **Sign in**. You are `owner`; your password is the access password.
-3. In the app go to **Settings > Access** and open the **accounts page**. Add a username. The page then shows the address, the username and a password to send to that person. The password is shown that one time.
+2. Open that address, or `http://<home-assistant-address>:3000` at home, and choose **Sign in**. You are `owner`; your password is the access password: the **Access password** option on the Configuration tab, or, if you left that empty, the one shown in the **Log** tab each time the add-on starts. The sign-in page names only the first of these, under **I run this Coin Machine**: anyone can open that page. Your own account page (`/account`) says both once you are signed in.
+3. In the app go to **Settings > Access** and open the **accounts page** (`/accounts` at your address). Add a username. The page then gives you a message for that person: where to sign in, their username and password, where to set a password of their own, and how to get the iPhone app. Choose **Email it** or **Text it**, or copy the message. The password is shown that one time. If it is lost, open **New password** on that person's row, confirm, and send the new message: their old password stops working and they are signed out on every device.
+4. For the iPhone app, send a second invitation yourself. The message asks the person to reply with the email address of their Apple ID. In [App Store Connect](https://appstoreconnect.apple.com/), add them under **Users and Access** with that address, then put them in a testing group on the app's **TestFlight** tab. Apple emails them the invitation; `/app` at your address walks them through the rest.
 
 What to know:
 
@@ -69,7 +70,9 @@ What to know:
 - **Keys.** Other accounts enter their own Anthropic and eBay keys in their Settings page. With **Share my keys with other accounts** on they use yours, and what they spend is billed to you. Their Settings page then has no AI, eBay or PCGS section, nothing tells them to add a key, and they cannot change the keys or raise what the AI may spend: each account's automatic analysis stays at the built-in daily budget, and analyses they start themselves are not limited.
 - **Yours only:** phone alerts, Home Assistant sensors and the options on this add-on's Configuration tab.
 - **Inside Home Assistant** the sidebar entry now shows a link to the public address instead of the app itself: everyone, you included, signs in at the one address.
-- **Passwords.** A person changes their own on their account page. You can give them a new one, switch an account off, or delete it with its data, on the accounts page. Your own password stays the `access_password` option.
+- **Passwords.** A person changes their own on their account page (`/account`; the message links to it). You can give them a new one, disable an account, or delete it with its data, on the accounts page. Your own password stays the `access_password` option.
+- **The address in the message.** With **Public address** set, the message carries it. Without it, the message carries the address you are using when you add the account, and the page says so: an address on your home network opens for nobody outside it, so change it in the message before you send it.
+- **On a phone.** `/app` at your address is a public page for the people you invite: how to get the iPhone app, which is in testing and comes by a separate invitation from Apple through TestFlight (step 4 above: you send it), and how to use Coin Machine in a browser or from a home-screen icon instead. An account here does not bring the app; the message links to that page.
 
 To go back, turn **Accounts** off and restart. Your own data is untouched either way; other accounts' data stays on disk until you delete the accounts.
 
