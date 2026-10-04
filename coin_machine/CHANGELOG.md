@@ -1,5 +1,10 @@
 # Changelog
 
+## 0.5.4
+
+- **The public pages say Coin Machine is private.** Where the home page, the tour and the sign-in page said "Accounts are by invitation", they now say it plainly: private for now, the person who runs this Coin Machine makes each account themselves and only for people they have agreed it with directly, and there is no sign-up, no waiting list and no public price. The tour's question about getting in is now "How do I get an account?" and gives that answer.
+- The smallest text on the home page is now 12 px, as on the tour.
+
 ## 0.5.3
 
 - **The tour starts with the short version.** A tester found the tour confusing and asked for it to be simpler at the start, with more for those who want it. It now opens with what Coin Machine is in two sentences and one example followed through: someone is selling 40 silver quarters for $285, what they are worth and what could go wrong, and the answer (Buy, and the most to pay). A visitor can stop there. Everything the tour had is still there behind nine cards that open, in two optional parts: "A closer look" and "How it decides". Each opened part starts in plain words, and the app's own figures and reasons are one tap further.
