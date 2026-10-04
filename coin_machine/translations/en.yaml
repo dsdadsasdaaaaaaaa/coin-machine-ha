@@ -57,7 +57,8 @@ configuration:
     name: Share my keys with other accounts
     description: >-
       Only with Accounts on. Lets other accounts use the Anthropic, eBay, PCGS and Numista keys set here, at
-      your cost. Off, each person enters their own keys in their Settings page.
+      your cost. They are then shown no key settings and cannot change them. Off, each person enters their own
+      keys in their Settings page.
   timezone:
     name: Time zone
     description: Optional. A time zone name such as Europe/London. Leave empty to use Home Assistant's time zone.

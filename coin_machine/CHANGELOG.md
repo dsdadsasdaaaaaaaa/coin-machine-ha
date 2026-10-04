@@ -1,5 +1,13 @@
 # Changelog
 
+## 0.4.0
+
+- **An introduction.** The first time someone opens Coin Machine, after the "Before you start" notice, a one-minute introduction sets it up for them: the kind of buyer they are, their numbers, how to read a verdict on a listing from their own feed, and how to bring a listing in. It can be skipped, and taken again at any time: **Introduction** in the navigation, the button at the top of Settings, or Settings > Help. Taking it again changes nothing unless you change it.
+- **Navigation on a phone.** A bar along the bottom with the Deal feed, Hunts, Pipeline, Melt and **More**, which lists everything else. It replaces the menu button at the top left, and nothing has moved out of reach.
+- **Accounts on your keys see no key settings.** With **Share my keys with other accounts** on, another account's Settings has no AI, eBay or PCGS section, nothing tells them to add a key, and they cannot change the keys or raise what the AI may spend. Their goal, numbers and data stay their own. Without that option nothing changes: each person adds their own keys.
+- **Ready for the iPhone app.** The pages know when they are shown inside the app: there, **Share, then Coin Machine** takes the place of the bookmarklet, and photos and screenshots shared from the phone arrive on the Capture page ready to analyze. The app itself is installed through TestFlight, not through this add-on.
+- Fixed: on a phone, opening a page at one of its sections could push the top bar off the screen with no way to bring it back.
+
 ## 0.3.3
 
 - The home page and the tour no longer carry a "Where it stands" list. The tour is nine stops.
