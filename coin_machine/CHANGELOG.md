@@ -1,5 +1,11 @@
 # Changelog
 
+## 0.3.3
+
+- The home page and the tour no longer carry a "Where it stands" list. The tour is nine stops.
+- The public pages no longer say that a visitor needs keys of their own: accounts here are by invitation and come ready to use.
+- With accounts on, your address now tells iPhones that links to it belong to the Coin Machine app, so a link can open there once the app is installed.
+
 ## 0.3.2
 
 - **The tour says what to do at every stop.** Each stop that can be used now has one line that says how ("Swipe sideways, or tap Next", "Tap a buyer to rescore the listing", "Drag the slider, or tap − and +"), and that line changes once you have done it. Everything that can be pressed now looks like a button, every stop ends with a link to the next one, and the first board sorts itself.
