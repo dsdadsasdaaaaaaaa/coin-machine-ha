@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.5.2
+
+- **Fixed, for real this time: the AI's reading of a listing was still refused.** 0.5.1 fixed the limit Anthropic named, and the next live run met a second one that cannot be measured ahead of time ("The compiled grammar is too large"). Coin Machine no longer depends on it: the format of the AI's answer for a listing is now given to the AI as written instructions and checked by Coin Machine when the answer arrives, instead of being enforced by Anthropic's servers. If any other format is ever refused the same way, Coin Machine switches that one over by itself and carries on.
+
 ## 0.5.1
 
 - **Fixed: the AI's reading of a listing was refused every time.** The first live runs showed Anthropic turning the analysis request away before reading it ("too many parameters with union types"): the answer format had 19 fields that could be left empty, and the API allows 16. Listings were still saved and scored by the rules, but none got the AI's reading of its photos. The format now has 3, a test counts every format Coin Machine sends, and nothing that is stored or shown has changed. A listing saved in the meantime can be read by the AI from **Run AI analysis** on its deal page.
