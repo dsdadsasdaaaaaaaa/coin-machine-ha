@@ -1,5 +1,10 @@
 # Changelog
 
+## 0.4.1
+
+- **What another account is told about its data is now true for it.** Someone signed in to your Coin Machine from their own phone was told their listings were "stored on this computer", shown this server's folders and free disk space, and given commands only you can run. An account other than yours now reads that its data is kept in its own Coin Machine, apart from every other account's, sees no file paths, and is told that restoring a backup is done on the server by its owner. Its own backups, downloads and diagnostics are still there. Your own pages are unchanged.
+- A few messages that spoke of "this computer" when they meant the server now say only what the reader can act on.
+
 ## 0.4.0
 
 - **An introduction.** The first time someone opens Coin Machine, after the "Before you start" notice, a one-minute introduction sets it up for them: the kind of buyer they are, their numbers, how to read a verdict on a listing from their own feed, and how to bring a listing in. It can be skipped, and taken again at any time: **Introduction** in the navigation, the button at the top of Settings, or Settings > Help. Taking it again changes nothing unless you change it.
