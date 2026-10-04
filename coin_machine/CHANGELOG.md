@@ -1,8 +1,16 @@
 # Changelog
 
+## 0.5.3
+
+- **The tour starts with the short version.** A tester found the tour confusing and asked for it to be simpler at the start, with more for those who want it. It now opens with what Coin Machine is in two sentences and one example followed through: someone is selling 40 silver quarters for $285, what they are worth and what could go wrong, and the answer (Buy, and the most to pay). A visitor can stop there. Everything the tour had is still there behind nine cards that open, in two optional parts: "A closer look" and "How it decides". Each opened part starts in plain words, and the app's own figures and reasons are one tap further.
+- The home page says the same thing in plainer words.
+- Every picture of the app on the home page and the tour was retaken from this version.
+- Fixed: on a tablet held upright, the third of the three phone pictures on the home page was cut off.
+- The AI's reading of listings works on the live Reddit hunt since 0.5.2. What it says is now worded the same everywhere: "AI estimate", and "the AI" in the messages you see when a reading fails, where some places still said "the model".
+
 ## 0.5.2
 
-- **Fixed, for real this time: the AI's reading of a listing was still refused.** 0.5.1 fixed the limit Anthropic named, and the next live run met a second one that cannot be measured ahead of time ("The compiled grammar is too large"). Coin Machine no longer depends on it: the format of the AI's answer for a listing is now given to the AI as written instructions and checked by Coin Machine when the answer arrives, instead of being enforced by Anthropic's servers. If any other format is ever refused the same way, Coin Machine switches that one over by itself and carries on.
+- **The AI's reading of a listing was still refused.** 0.5.1 fixed the limit Anthropic named, and the next live run met a second one that cannot be measured ahead of time ("The compiled grammar is too large"). Coin Machine no longer depends on it: the format of the AI's answer for a listing is now given to the AI as written instructions and checked by Coin Machine when the answer arrives, instead of being enforced by Anthropic's servers. If any other format is ever refused the same way, Coin Machine switches that one over by itself and carries on.
 
 ## 0.5.1
 
