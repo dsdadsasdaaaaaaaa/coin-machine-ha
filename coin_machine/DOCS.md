@@ -30,7 +30,7 @@ You can leave every option as it is.
 | `access_password` | The password for signing in, at least 8 characters. If you leave it empty, the app creates one on its first start and shows it in the **Log** tab on every start. |
 | `anthropic_api_key` | Your Claude API key, from the [Anthropic console](https://console.anthropic.com/settings/keys). Needed for photo analysis and deal reports. |
 | `ebay_client_id`, `ebay_client_secret` | Your eBay developer keyset (App ID and Cert ID), from [eBay's developer keys page](https://developer.ebay.com/my/keys). Needed for eBay hunts; the Reddit hunt needs no keys. |
-| `ebay_environment` | `production` for real listings, `sandbox` for eBay's test site. |
+| `ebay_environment` | `production` for real listings, `sandbox` for eBay's test site. A sandbox keyset (its App ID contains `-SBX-`) only works with `sandbox` and returns test listings, not real ones. |
 | `pcgs_api_token` | PCGS certificate and price guide lookups. |
 | `numista_api_key` | Numista catalogue estimates on world-coin deals, shown as estimates, never as sales. |
 | `notify_service` | Leave it empty: the app finds your phone by itself when Home Assistant has exactly one, and its **Settings > Home Assistant** page lists every phone to pick from. Set it only to name a notify service yourself, such as `mobile_app_pixel_8`; a choice made in the app wins over it. |
@@ -53,6 +53,25 @@ The add-on log never shows your keys or a password you set: each appears only as
 **By its own address**, on your home network only: `http://<home-assistant-address>:3000`, for example `http://192.168.1.20:3000`. This way asks for the access password: enter the one you set, or copy the generated one from the **Log** tab. To change it, set `access_password`, save, and restart the add-on.
 
 Only administrators of your Home Assistant see Coin Machine in the sidebar and can open it this way. Everyone else needs its own address and the access password.
+
+## eBay production keys
+
+eBay hunts need a **Production** keyset, and eBay keeps a new one switched off until your application either
+declares that it keeps no eBay data or subscribes to its "account deletion" notices. Coin Machine keeps each
+seller's username and feedback numbers with a listing, so it subscribes, and it receives the notices itself:
+
+1. Turn on **Accounts** and set **Public address** to an `https` address (see Accounts below). eBay only
+   accepts a public https address.
+2. In Coin Machine open **Settings, eBay, How to get eBay keys**. Step 3 shows a **Notification endpoint** and a
+   **Verification token**.
+3. On eBay's [Marketplace Account Deletion page](https://developer.ebay.com/marketplace-account-deletion)
+   choose to subscribe, enter an email address for alerts, then those two values, and save. eBay checks the
+   address at once. Then press **Send Test Notification**.
+4. Copy the Production **App ID** and **Cert ID** into `ebay_client_id` and `ebay_client_secret` above, set
+   `ebay_environment` to `production`, and restart.
+
+From then on, when an eBay member closes their account, what Coin Machine holds of them (their listings, and
+their name in a blocked-sellers list) is deleted, in every account.
 
 ## Accounts: one address for several people
 

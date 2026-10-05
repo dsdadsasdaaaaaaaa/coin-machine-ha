@@ -1,5 +1,15 @@
 # Changelog
 
+## 0.7.1
+
+- The same as 0.7.0, which was never published: its image was stopped by the release checks because it carried the app's source files. This one does not.
+
+## 0.7.0
+
+- **Coin Machine can now receive eBay's account-deletion notices, which is what eBay asks for before it switches on production keys.** eBay keeps a new Production keyset off until your application either declares that it keeps no eBay data or subscribes to these notices. Coin Machine keeps each seller's username and feedback numbers with a listing, so it subscribes. With Accounts on and an `https` Public address, **Settings, eBay, How to get eBay keys**, step 3, now shows the **Notification endpoint** and **Verification token** to type at eBay. When an eBay member closes their account, what is held of them (their listings, and their name in a blocked-sellers list) is deleted, in every account. The documentation has the steps under "eBay production keys".
+- This has not yet been exercised against eBay itself: **Send Test Notification** on eBay's page is the first real check.
+- A sandbox keyset only ever returns eBay's test listings; the documentation now says so.
+
 ## 0.6.0
 
 For people who buy in Canada. Coin Machine still works in US dollars (spot, melt and most listings are priced in them), and now meets Canadian dollars at the edges.
