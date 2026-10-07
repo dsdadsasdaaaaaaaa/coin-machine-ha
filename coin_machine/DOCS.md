@@ -73,6 +73,19 @@ seller's username and feedback numbers with a listing, so it subscribes, and it 
 From then on, when an eBay member closes their account, what Coin Machine holds of them (their listings, and
 their name in a blocked-sellers list) is deleted, in every account.
 
+## Kijiji and Facebook Marketplace
+
+**Kijiji** needs nothing set up: on the Hunts screen add a hunt and choose **Kijiji** under **Where to search**, or add the starter hunt **Kijiji silver and gold**. Coin Machine reads Kijiji's public search pages and says who it is when it does. If Kijiji refuses a request, Kijiji hunts stop for six hours and say so.
+
+**Facebook Marketplace** can be read two ways.
+
+- **From your own browser, for every account.** On a computer, with Marketplace open, click the **Send to Coin Machine** bookmark on a search or category page (Analyze has the bookmark to drag to your bookmarks bar). Every listing on screen is sent; you keep the ones you want and they join the feed.
+- **By itself, for the owner only.** The add-on carries a browser of its own. On the Hunts screen open **Facebook Marketplace**, press **Sign in to Facebook** and sign in yourself in the picture of that browser: click a field, type into the box under the picture, press Send. Then add a hunt with **Facebook Marketplace** under **Where to search**. Your password goes to that browser and is not kept by Coin Machine; **Sign out** removes the browser's profile from this server.
+
+Facebook forbids automated reading, signed in or not, and restricts or disables accounts it catches doing it. Coin Machine's browser does not hide what it is, and the first time Facebook asks it to sign in again or to confirm who is there, every Marketplace hunt stops until you sign in again. The account you sign in with is at risk; that choice is yours.
+
+A Marketplace listing found either way has a title, a price and a place, no photos. Open the one that scores well on Facebook and send it on its own for the full analysis.
+
 ## Accounts: one address for several people
 
 Coin Machine holds one person's deals, settings and keys. Turn **Accounts** on and each person gets their own, behind one address and a sign-in.

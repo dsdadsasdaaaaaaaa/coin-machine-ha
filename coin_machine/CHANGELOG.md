@@ -1,5 +1,18 @@
 # Changelog
 
+## 0.8.0
+
+More places to find deals, where Canadians sell: Kijiji and Facebook Marketplace.
+
+- **Kijiji hunts.** A hunt can now search Kijiji: choose **Kijiji** under **Where to search**, or add the new starter hunt **Kijiji silver and gold**. Each keyword reads the newest page of ads across Canada, keeps the ones with a stated price, converts the price from Canadian dollars at the day's rate (the deal page keeps what the ad said) and scores them like any other listing. Ads that say "please contact", wanted ads and paid dealer ads are left out. Before an AI analysis the whole ad is read, with all of its photos. Kijiji needs no keys.
+- **How it reads Kijiji.** Kijiji offers buyers no data feed, so Coin Machine reads its public search pages and says who it is when it does. It reads one page at a time with a pause between them, and if Kijiji refuses a request, Kijiji hunts stop for six hours and say so; nothing is done to get around a refusal. Reading the site this way is not something Kijiji's terms invite. It is the choice of whoever runs this Coin Machine.
+- **A page of Facebook Marketplace results, in one click.** On a computer, with Marketplace open and signed in as yourself, clicking the **Send to Coin Machine** bookmark on a search or category page now sends every listing on screen: title, price and place. Coin Machine lists them, you untick what you do not want, and the rest join the feed, scored. A results page shows no photos and no description, so open the one that scores well and send it on its own for the full analysis. **Drag the bookmark to your bookmarks bar again to get this** (Analyze, "Send a listing in one click"). This way works for every account and asks nothing of Facebook: it reads what your own browser already shows you.
+- **Facebook Marketplace hunts, for the owner.** The add-on now carries a browser of its own. On the Hunts screen, open **Facebook Marketplace**, press **Sign in to Facebook** and sign in there yourself: you see that browser's page, click in it, and type through the box under it. Your password goes to that browser and is not kept by Coin Machine. Then add a hunt and choose **Facebook Marketplace** under **Where to search**. Each keyword opens one Marketplace search, newest first, twenty seconds apart and at most every half hour, and the listings join the feed with a title, a price and a place, scored by rules. Open one on Facebook and send it on its own for the photos and the full analysis.
+- **What you should know before you use it.** Facebook forbids reading it this way, signed in or not, and it restricts or disables accounts it catches doing so. Coin Machine's browser does not hide that it is automated. The first time Facebook asks it to sign in again or to confirm who is there, every Marketplace hunt stops and the Hunts screen says so; nothing is done to get around that. Use it knowing the account you sign in with is at risk. Other accounts on your Coin Machine are not offered it.
+- The image is larger by the size of the browser, a few hundred megabytes.
+- Kijiji has been read from this code against live pages, but no hunt has yet run inside a published Coin Machine. The Marketplace results page has been tested against the layout of its cards, not against Facebook itself. The Marketplace hunt has started its browser and met Facebook's sign-in page; it has never run signed in. The first hunt run, the first click and the first sign-in are the real checks.
+- Kijiji and Facebook sales are private, in person and unprotected: check the coins before paying.
+
 ## 0.7.1
 
 - The same as 0.7.0, which was never published: its image was stopped by the release checks because it carried the app's source files. This one does not.
