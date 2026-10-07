@@ -1,5 +1,11 @@
 # Changelog
 
+## 0.8.1
+
+- **Canadian dollars are now the default.** The option **Currency people here buy in** starts at `CAD`, so an install that never set it switches on this update: prices can be typed in Canadian dollars, Kijiji and Marketplace prices are read as Canadian, and Canadian dollars show beside the figures you act on. An account that chose its own currency in **Settings, Costs** keeps its choice; set the option to `USD` to go back.
+- **Signing in to Facebook: the "are you a person" check was blank.** The browser on your Coin Machine may load only Facebook's own addresses, and the check is served from elsewhere, so it never appeared. During a sign-in it is now let through, for you to do yourself in the picture. Coin Machine does not answer it for you. This could not be tried against Facebook's own check before release; if it is still blank, or it is the kind you drag rather than click, say so.
+- Coin Machine's own figures, and what you paid and sold for, are still US dollars underneath. Making every figure Canadian is the next piece of work.
+
 ## 0.8.0
 
 More places to find deals, where Canadians sell: Kijiji and Facebook Marketplace.
