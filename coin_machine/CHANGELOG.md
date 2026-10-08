@@ -1,5 +1,16 @@
 # Changelog
 
+## 0.9.1
+
+Less to set up, less to read, and less spent while nobody is looking.
+
+- **Settings starts with three questions.** What you are doing (buy to resell, buy to keep, stack metal), the most you would spend on one deal, and your currency. Coin Machine works the rest out from those, such as the smallest profit worth showing you as a buy. Everything that was there before is under **Advanced settings**, with the values it already had, for anyone who wants to change one.
+- **Hunts starts with one box: "What are you looking for?"** Type it, pick where (Kijiji, Reddit, and eBay or Facebook Marketplace once they are connected), press **Start looking**. How often it runs, what it leaves out and whether the AI reads what it finds are chosen for you, and the first search runs straight away. **New hunt** still opens the editor with every setting.
+- **Hunt rows say less.** What it looks for, where, and between which prices, then what it found. The finer settings are in the editor. eBay hunts that cannot run until eBay is connected fold into one line, and the eBay call counts show only once eBay is connected.
+- **The AI stops spending when nobody is looking.** Hunts run by themselves, and each run sent its best new finds to the AI, up to a daily cap, whether or not anyone ever opened the app to read them. Now automatic AI analysis rests once Coin Machine has not been opened for a day, and starts again when you open it. Hunts keep running and scoring by rules, which costs nothing. An analysis you start yourself always runs.
+- **The daily cap for automatic AI analysis now starts at $2, not $5.** If you set your own cap in Settings it is unchanged. With several accounts sharing your keys, each account has its own cap, and each now rests on its own when its owner is away.
+- **Plainer wording.** "This Coin Machine" is gone: it is just Coin Machine.
+
 ## 0.9.0
 
 **Coin Machine can now work entirely in Canadian dollars.**
