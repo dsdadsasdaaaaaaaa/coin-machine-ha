@@ -65,6 +65,16 @@ configuration:
       CAD unless you change it. With CAD, every account can type a listing's price in Canadian dollars and sees
       Canadian dollars beside the figures to act on, at a daily rate. Coin Machine's own figures stay US dollars.
       Each account can change this for itself in Settings, Costs. Choose USD for US dollars only.
+  apns_key_id:
+    name: Apple push key ID
+    description: >-
+      Optional, for push notifications to the Coin Machine iPhone app. The 10-character ID of a key made in
+      your Apple Developer account under Keys, with Apple Push Notifications service ticked.
+  apns_key:
+    name: Apple push key
+    description: >-
+      Optional. The contents of that key's .p8 file, pasted whole (the BEGIN and END lines can stay). With
+      both set, a listing rated Buy reaches the phone the moment a hunt finds it. The key stays on this server.
   timezone:
     name: Time zone
     description: Optional. A time zone name such as Europe/London. Leave empty to use Home Assistant's time zone.

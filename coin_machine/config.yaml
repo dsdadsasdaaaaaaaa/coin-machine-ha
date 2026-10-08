@@ -3,7 +3,7 @@
 # `version` must equal package.json's version: the Supervisor pulls `<image>:<version>`,
 # and the release workflow (.github/workflows/addon-image.yml) refuses a tag that disagrees.
 name: Coin Machine
-version: "0.12.0"
+version: "0.13.0"
 slug: coin_machine
 description: AI deal analyst for coin flippers, collectors and dealers. Runs your hunts on a schedule and sends new BUY deals to your phone.
 url: https://github.com/dsdadsasdaaaaaaaa/coin-machine-ha
@@ -54,6 +54,8 @@ options:
   share_keys: false
   # The people this is built for buy in Canada. An install that never set the option gets this on update.
   currency: CAD
+  apns_key_id: ""
+  apns_key: ""
 schema:
   access_password: password?
   anthropic_api_key: password?
@@ -69,4 +71,6 @@ schema:
   frame_ancestors: str?
   public_url: url?
   currency: list(USD|CAD)?
+  apns_key_id: password?
+  apns_key: password?
   timezone: str?

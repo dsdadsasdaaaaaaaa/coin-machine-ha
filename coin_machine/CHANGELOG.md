@@ -1,5 +1,22 @@
 # Changelog
 
+## 0.13.0
+
+**Sharper where it counts, and ready for push notifications.**
+
+- **The feed opens on what is worth a look.** Buy and Watch listings together, best first. The tabs are **Worth a look**, **Saved** and **Passed**. Listings that turned up since your last visit are marked **New**.
+- **Saved has a home.** What you star, or swipe right on a phone, is under the Saved tab.
+- **When nothing is worth a look, it says why.** Instead of an empty list you get the most common reason listings were passed, and a button to change what is being looked for.
+- **A deal's main button is the thing to do.** On a listing that is fair but not a buy at its price, the button is now **Make an offer**: it opens a message to the seller that is already written, with the amount worked out for you, and **Copy and open the listing** takes you to the ad to paste it. That first message is written by rule and costs nothing; **Write it again** asks the AI.
+- **Canadian dollars by themselves.** A new account that says it is in Canada keeps its figures in Canadian dollars from the start. An account that already has history is not changed: Settings does that when you ask.
+- **French searches in Quebec.** In Montreal, Quebec City, Gatineau and Sherbrooke, local ads are searched in French first, with English after.
+- **Old passed listings clear themselves.** A listing a search brought in that was passed and has been gone from its site for two weeks is deleted, unless you saved it. Anything you added yourself is never touched.
+- **Check starts with the camera** on a phone: **Take a photo**, then the photo library.
+- **Push notifications, once you add an Apple push key.** Two new options, **Apple push key ID** and **Apple push key**. With both set and alerts turned on in the iPhone app, a listing rated Buy reaches the phone the moment a search finds it. Without them the app checks by itself a few times a day, as before.
+- **In the iPhone app (needs the new build from TestFlight):** a count of new listings on the Deals tab, pull down to refresh, and text that follows the phone's text-size setting.
+
+Push has not been sent to a real phone yet: it needs your Apple key and the new app build. The signing of Apple's token is tested; delivery is not. The "Pipeline" page keeps its name for now.
+
 ## 0.12.0
 
 **Smarter, and clear about what it costs.**
