@@ -1,5 +1,17 @@
 # Changelog
 
+## 0.12.0
+
+**Smarter, and clear about what it costs.**
+
+- **New since you last looked.** When listings rated Buy have turned up since your last visit, the top of the feed shows the best three, each with a **Message** button that goes straight to the note to the seller. When nothing new is a Buy, nothing is shown.
+- **The searches tune themselves.** Once a week Coin Machine shows the AI what each of your searches brought in (what was rated Buy or Watch, what you saved, what you dismissed) and lets it drop the words that only brought junk and add the ones that worked. It is one small AI request a week and nothing for you to do.
+- **AI: Off, Careful or Full.** Settings now asks one question about the AI instead of a budget and a count: Off (rules only, costs nothing), Careful (the few best new finds, up to about $1 a day) or Full (every promising find, up to about $5 a day). Under it is what the AI cost over the last 7 days, as an estimate. What you start yourself always runs. The old figures are still under Advanced.
+
+Push notifications to the iPhone the moment a Buy is found are not in this release. They need a new app build and an Apple push key that only you can create; they come next.
+
+None of the three has run against the live AI yet: the weekly tuning and the cost line were checked by their rules and tests on a copy with no AI key.
+
 ## 0.11.0
 
 **The iPhone look.** The pages are reshaped for a phone, and the iPhone app gets real iPhone controls.
