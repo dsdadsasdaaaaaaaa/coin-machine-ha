@@ -1,5 +1,16 @@
 # Changelog
 
+## 0.9.2
+
+**Hunts asks two questions and does the rest.**
+
+- **What do you want to find, and how do you want to buy it?** Tick what you are after (silver bullion, gold, old silver coins, collectible coins, collections and estate lots, or anything underpriced), choose pick up near me, shipped to me, or either, and press **Find deals**. There is one optional line for anything in particular. That is the whole page.
+- **The AI chooses the searches.** Claude reads your answers, your goal and the most you spend on one deal, and decides which searches to run on each place that works for you (Kijiji, Reddit, and eBay or Facebook Marketplace once they are connected), in the words sellers on that place actually use, with a price range for each. Coin Machine saves them, runs them straight away and keeps them running. It is one small AI request each time you answer. Without the AI turned on, a built-in list of searches is used instead and the page says so.
+- **Change your mind any time.** The page shows what you are looking for and a **Change** button. New answers replace the hunts the last answers made; a hunt you added by hand is never touched.
+- **Everything else is under one line, Advanced.** The editor with every setting, the one-keyword box, Facebook sign-in, describing a hunt in your own words, blind spots, the starter hunts and the eBay figures are all still there, folded away.
+
+Not yet checked against the live AI on a real account: the searches it chooses have been read on a test copy only. If a hunt it makes looks wrong, delete it from its row or answer again.
+
 ## 0.9.1
 
 Less to set up, less to read, and less spent while nobody is looking.
