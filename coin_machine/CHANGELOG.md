@@ -1,5 +1,20 @@
 # Changelog
 
+## 0.9.0
+
+**Coin Machine can now work entirely in Canadian dollars.**
+
+- **One setting: Settings, Costs, Your currency.** Choose **Canadian dollars** and confirm. What you have entered so far (what you paid and sold for, your minimum profit and per-deal limit, want-list limits, hunt price ranges) and every listing are converted once, at the day's rate, and every listing is scored again. From then on every figure you read is in Canadian dollars and every amount you type is too. The top bar shows **CAD**. You can change back the same way.
+- **Nothing drifts.** Amounts are converted once, at the switch, not every time a page is drawn: a price you paid stays the price you paid.
+- **A Kijiji ad keeps exactly the price it was listed at.** A listing priced in US dollars (eBay, Reddit) is converted when it comes in, and the deal page shows what it said ("US$285.00 as listed").
+- **The verdicts are the same deals.** Spot, sold prices, price guides and eBay's fee thresholds are US-dollar figures and are converted at the day's rate when a listing is scored, so a listing gets the same Buy, Watch or Pass in either currency. "Bid up to", "Offer" and the max price are whole Canadian dollars.
+- **Hunts.** A hunt's price range is in your currency whatever the marketplace prices in; each marketplace is asked in its own.
+- **The AI still reasons in US dollars**, because that is what its knowledge of coin prices is in, and its valuation is converted for you. A message drafted to a seller is written in the currency that seller listed in.
+- **Home Assistant** sensors for expected profit and spot report in your currency.
+- The rate is a daily reference rate, not a bank's. A US-dollar listing is converted when it is stored or refreshed, so one you captured by hand weeks ago stays at that day's rate until you edit its price.
+- Not converted: the notes you typed, the melt tally kept in your browser, and CSV exports, which carry figures in your currency without naming it.
+- This has been run against a copy of the app with sample data, switching both ways. It has not yet been run on an account with real history; make a backup first (Settings, Data safety).
+
 ## 0.8.1
 
 - **Canadian dollars are now the default.** The option **Currency people here buy in** starts at `CAD`, so an install that never set it switches on this update: prices can be typed in Canadian dollars, Kijiji and Marketplace prices are read as Canadian, and Canadian dollars show beside the figures you act on. An account that chose its own currency in **Settings, Costs** keeps its choice; set the option to `USD` to go back.

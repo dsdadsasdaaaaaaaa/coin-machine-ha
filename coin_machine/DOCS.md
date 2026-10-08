@@ -39,7 +39,7 @@ You can leave every option as it is.
 | `public_url` | The address you open the app at, such as `http://homeassistant.local:3000`, used for links in phone alerts. Empty uses the address you last signed in from. |
 | `accounts` | Off by default. Turn it on to give other people their own Coin Machine at one address, each with a username and a password. See **Accounts** below. |
 | `share_keys` | Only with `accounts` on. Lets other accounts use the Anthropic, eBay, PCGS and Numista keys set here, at your cost. They are then shown no key settings and cannot change them. Off, each person enters their own keys in their Settings page. |
-| `currency` | `CAD` (the default) or `USD`: the currency people here buy in. With `CAD`, every account can type a listing's price in Canadian dollars and sees Canadian dollars beside the figures to act on, at a daily reference rate. Coin Machine's own figures stay US dollars. Each account can change it for itself in Settings, Costs. |
+| `currency` | `CAD` (the default) or `USD`: the currency people here buy in. With `CAD`, every account can type a listing's price in Canadian dollars and sees Canadian dollars beside the figures to act on, at a daily reference rate. Coin Machine's own figures stay US dollars. To have every figure in Canadian dollars, and type every amount in them, each account chooses **Canadian dollars** under **Settings, Costs, Your currency**: what it holds is converted once. This option alone does not do that. |
 | `timezone` | A time zone name such as `Europe/London`. Empty uses Home Assistant's time zone. |
 
 Keys you leave empty here can be entered later in the app's **Settings** page instead. An option that is set always wins over a key saved in Settings.
