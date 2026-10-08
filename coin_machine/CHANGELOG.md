@@ -1,5 +1,32 @@
 # Changelog
 
+## 0.11.0
+
+**The iPhone look.** The pages are reshaped for a phone, and the iPhone app gets real iPhone controls.
+
+- **Listings lead with the photo.** On a phone each listing is a card with a large photo beside the title, the price call and the expected profit in larger type.
+- **Swipe a listing.** On a touch screen, swipe a card right to save it or left to dismiss it. The card names what letting go will do, and nothing happens unless you swipe well past the middle. The card's menu still has the same two.
+- **A deal opens on the answer.** On a phone the deal page is the photo, the verdict, what to pay and the one button, plus anything you need to do next. The math, risks, comps, seller and the rest are behind one **Show details** button.
+- **Dialogs rise from the bottom** on a phone, full width, like the sheets the phone's own apps use.
+- **In the iPhone app (needs the new app build from TestFlight):** the tab bar, the Back button and the More list are now the phone's own controls, floating over the page in Liquid Glass on current iOS (a blurred bar on older iOS). The website's own bottom bar is no longer drawn inside the app. Tabs switch without reloading the page.
+
+The app's new bars were written without an iPhone or simulator to run them on: they compile on GitHub's Macs, and the first look at them is on a real phone through TestFlight. Expect adjustments. The web changes were checked on a phone-sized screen.
+
+## 0.10.0
+
+**The simple version.** One thing to set up, one thing to look at, and a phone screen that opens on listings.
+
+- **One search, not a list of hunts.** Coin Machine now shows a single card, **Looking for**: what you want, how you buy it and where, when it last checked and how many listings are worth a look, with one switch to pause it and a **Change** button. The separate searches still run underneath (each site is searched in its own way), but you never see or manage them. They are under **Advanced** on the Hunts page for anyone curious. If older searches are still running beside it, the card says so and turns them off in one tap.
+- **"Near me" now means near you.** Pick your nearest city once and Kijiji is searched within about an hour's drive of it instead of across all of Canada. Local listings show how far away they are ("35 km away"). Facebook Marketplace already uses the location of the Facebook account that is signed in.
+- **Set-up is four screens.** The introduction asks who you buy as, the most you would spend on one deal, and what to look for, then starts searching and drops you in the feed while it fills. It no longer asks for profit targets, returns or tax: those are worked out or left at values that work, and are in Settings.
+- **The feed opens on listings.** On a phone the first screen is the title, the Looking for card, the Buy / Watch / Pass tabs and listings. Search, sort and filters are behind one button; the figures moved below the list.
+- **Four tabs.** Deals, Check (a listing you found yourself), My coins, and More, which holds every other page.
+- **Plainer names.** Deal feed is **Deals**, Analyze is **Check a listing**, Lot X-ray is **Value a lot**, Inventory is **My coins**, Melt is **Metal values**, Show kit is **Coin show sheet**, Playbook is **Guide**. Nothing was removed.
+- **Samples leave by themselves.** The sample listings and sample hunts are removed the moment you say what to look for.
+- **It says what it is doing.** After you answer, the card reads "Searching Kijiji…" and counts what it finds, instead of leaving an empty page.
+
+Checked on a test copy with a real Kijiji search around Toronto. Not yet run on a real account: the AI choosing the searches (0.9.2) and Facebook Marketplace returning listings are still unconfirmed live.
+
 ## 0.9.2
 
 **Hunts asks two questions and does the rest.**
