@@ -1,5 +1,10 @@
 # Changelog
 
+## 0.15.1
+
+- **Find deals failed with "Your searches could not be made"** for anyone who had not picked a city (for example with "Shipped to me"). Saving "no city" was refused by the database. It is now saved as it should be. Found on the first live run.
+- In the iPhone app, More lists every page the tab bar does not hold, whatever version the server is on (needs the new app build).
+
 ## 0.15.0
 
 **From finding a deal to selling it on.**
