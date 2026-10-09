@@ -1,5 +1,17 @@
 # Changelog
 
+## 0.14.0
+
+**The numbers are worked out for how you actually buy and sell, in Canada.**
+
+- **How do you sell?** The questions now ask: locally for cash (Kijiji, Marketplace, in person), on eBay, or to a dealer. A listing's profit is worked out for the way you sell. Selling locally for cash is new: no fees and no shipping, at a little under what eBay brings. Before this, profit was always worked out as if you sold on eBay or a US forum.
+- **What your dealer pays.** Settings has two optional boxes: the share of the metal's value your dealer pays for silver and for gold. Anything listed under that can be sold the same day for more, and it becomes the floor every listing is checked against. Left empty, typical dealer prices are used.
+- **Canada is home.** For an account in Canadian dollars, a listing in the United States is now the one that crosses a border, with import charges and a longer wait, and a Canadian one is not. eBay searches ask only for what ships to Canada and price the shipping to your city.
+- **Eight more Canadian coins** the app can recognise and weigh: the silver five cents, the 1967 gold $20, the Mint's $20 for $20, $50 for $50 and $100 for $100, the $10 half-ounce commemoratives, and the 1988 Calgary Olympic $20. Their weights were entered from the Mint's published figures as remembered, not re-read from the Mint's pages: weigh one before trusting it.
+- **Fewer wrong "worth a look" listings.** The rules were run against real Kijiji ads and corrected where they were wrong: a lapel pin, a signed hockey puck and a pearl bracelet are no longer read as silver coins; an ad whose title says SOLD is passed; a seller who says the price is firm is not shown as open to an offer; a listing that would only work at a price far under its asking price is a Pass instead of a Watch; and "(9x) ... $320 each" is priced as one, not nine. On the test copy this took 15 listings rated worth a look down to the ones that deserved it.
+
+Checked on a test copy against about 300 real Kijiji ads. Not checked: eBay searches from Canada (eBay is connected on your server, not on the test copy), and the dealer figures against a real dealer's prices.
+
 ## 0.13.0
 
 **Sharper where it counts, and ready for push notifications.**
