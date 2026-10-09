@@ -1,5 +1,25 @@
 # Changelog
 
+## 0.15.0
+
+**From finding a deal to selling it on.**
+
+- **Today.** A new page, and the second tab on a phone: what there is to do, in order. **Buy** lists what is rated Buy, **Waiting on a reply** holds the offers you sent (with a nudge after a day), and **Ready to sell** holds what you bought. Each row ends in one press: Offer sent, Bought it, No deal, Sold it. It is the Pipeline board as a to-do list; the board is still there.
+- **Sell this.** On anything you bought, one button gives you the ad: a title and description, what to ask at each place you sell, the photos from the listing you bought it from to save and reuse, and buttons that open eBay's, Kijiji's or Marketplace's own page for a new listing. You paste and post it yourself: nothing is posted for you.
+- **What has earned.** Today shows your realised profit by where each item was found, and the weekly tuning of your searches now follows what actually made money.
+- **Verdicts in a sentence.** On a phone each listing says what the seller wants, what the thing is worth and what to do: "Seller wants $320. The silver alone is worth $387. Buy it."
+- **Meet-up mode.** On a listing you buy in person, **I'm at the meet-up** opens four checks with big buttons (magnet, weight, width, does it match the photos), shows the most to pay, and records the purchase in one press.
+- **Price drops and metal moves.** A listing that turns into a Buy after you first saw it (the seller dropped the price, or silver moved) is now announced like a new one.
+- **Sellers who may take less.** "Must sell", "OBO", "moving" and the like are noticed, and the opening offer written for you goes further under the asking price.
+- **Kijiji is looked at every half hour.** Two of your searches at a time, in turn, so new ads are seen sooner without asking Kijiji for more pages in a day.
+- **One card per item.** The same ad posted on Kijiji and on Marketplace is shown once.
+- **A $10 with maple leaves on it is half an ounce.** The Mint's $10 "Maple Leaves" coins were being read as the 1 oz Silver Maple Leaf, which doubled their silver. Found on a real Kijiji ad.
+- **In the iPhone app (needs the new build):** the tabs are Deals, Today, Check and More.
+
+Not built: more Canadian sources. MaxSold answers a plainly labelled request with a browser check, and Coin Machine does not work around those. eBay's own API for posting a listing for you is also not built: it needs you to grant eBay selling access, and is a project of its own.
+
+Checked on a test copy and by tests. Not yet used on a real purchase from offer to sale.
+
 ## 0.14.0
 
 **The numbers are worked out for how you actually buy and sell, in Canada.**
