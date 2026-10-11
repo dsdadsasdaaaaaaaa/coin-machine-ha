@@ -1,5 +1,11 @@
 # Changelog
 
+## 0.18.1
+
+- **The public pages show the app as it is now.** Every picture on the home page and the tour was retaken from this version (eight phone screens and six on a computer), the pages that no longer exist are gone from them, and the figures in the tour's examples are the ones the app gives today. They now say where listings come from (Kijiji near you, eBay, and anything shared or pasted) and that an account in Canada keeps its figures in Canadian dollars.
+- The **Want list** filter is gone from Deals, and Metal values no longer points to the Guide: both pages left the menu in 0.16.0.
+- In the iPhone app (needs the new build): the background check announces a listing under its metal value as well as a Buy, in the same words the server uses.
+
 ## 0.18.0
 
 **It tells you, it knows Canadian coins, and it keeps looking for everyone.** (`docs/AUDIT.md`, items 8, 9, 11 and 12.)
