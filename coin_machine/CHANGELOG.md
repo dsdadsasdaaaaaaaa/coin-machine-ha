@@ -1,5 +1,24 @@
 # Changelog
 
+## 0.16.0
+
+**It reads real listings right.** A fresh set-up was run on 270 real Kijiji and Reddit listings and each one checked by hand; this release fixes what that found (`docs/AUDIT.md`, items 1 to 7, 10, 23, 26 to 28, 31 and 36).
+
+- **Sets are valued as sets.** A 1976 Montreal Olympic four-coin set was valued on one coin's silver, which hid nine sets priced under their metal. Olympic and 1967 sets are now known, a stated total beats adding parts, and years in a title are no longer counted as coins. A set whose content is not known is left unvalued instead of guessed.
+- **No more offers nobody would take.** A listing is not marked "worth a look" on an offer far under its asking price and below what a dealer pays for the metal. It is a Pass: "no offer worth making, a dealer would pay the seller more".
+- **Kijiji results are coins.** Searches stay in the collectibles category, an ad must name a coin or bullion in its title, and jewellery, pens, tableware and toys are dropped. An ad first posted over six months ago is kept only if the seller bumped it this month, and "New" is for ads posted in the last two weeks.
+- **The whole ad is read** for anything that looks good, without the AI. Before, every Kijiji ad was judged on its first 200 characters and one photo, and every one carried a false "Only one photo" warning.
+- **New ads are seen sooner.** Every look reads the newest ads of one broad search as well as one of your own.
+- **Canada from the first screen.** A new account keeps its books in Canadian dollars whether or not a city was picked. Picking up nearby needs your nearest city (or **Use my location**), so "local" no longer means six provinces.
+- **Reddit is off unless you ask.** Its sellers are in the United States, price in US dollars and mostly do not ship here. One switch under "How do you want to buy?" turns it on. The built-in Reddit search stops once you have your own.
+- **Small misreadings.** A banknote is not a silver dollar. A mint's gilded silver coin is silver, not "plated, walk away". "1/2 gram" is a weight. A graded collector coin with no table value says "not valued by the rules" instead of showing its metal as its worth. Lines of a Reddit post that are terms, not items, are no longer listings.
+- **Fewer pages.** The menu is Deals, Check, Today, Pipeline, My coins, Your record, Metal values and Settings. Sets, Want list, Guide, Coin show sheet, Advisor, Value a lot and Hunts still open at their addresses.
+- **Fewer words.** The paragraph of cautions on every deal is one line, and in the iPhone app the legal line is no longer under every page (it is in Settings, Help).
+- **Sell this** leaves out the US Reddit board for a Canadian-dollar account, and says so when every asking price is under what you paid.
+- **Fixed:** on a phone, opening Filters crushed the Worth a look, Saved and Passed tabs into each other. "Spot price is stale" no longer shows on a price fetched minutes ago.
+
+Not seen running: the collectibles search address is taken from Kijiji's own pages and falls back to the old search for a day if Kijiji refuses it.
+
 ## 0.15.1
 
 - **Find deals failed with "Your searches could not be made"** for anyone who had not picked a city (for example with "Shipped to me"). Saving "no city" was refused by the database. It is now saved as it should be. Found on the first live run.
