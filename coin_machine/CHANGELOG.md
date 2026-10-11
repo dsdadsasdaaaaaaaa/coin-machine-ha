@@ -1,5 +1,19 @@
 # Changelog
 
+## 0.18.0
+
+**It tells you, it knows Canadian coins, and it keeps looking for everyone.** (`docs/AUDIT.md`, items 8, 9, 11 and 12.)
+
+- **Alerts for more than Buy.** You are now told when a listing is priced at or under 92% of the value of its metal and is near you, even when it is not rated Buy: "Under its metal value: ...", with the asking price, the metal's value and the distance. At most three a look and eight a day, and never the same listing twice.
+- **A line a day when nothing was found.** In the evening: "Checked N listings today. Nothing worth your time." Not sent on a day with an alert or with no new listings. One switch in Settings, Alerts turns it off.
+- **Royal Canadian Mint coins are known.** The cased silver dollars by era (and the nickel dollars that hold no silver), the yearly proof and double dollar sets, the $15 Lunar coins and the one-ounce $20 are read for what they hold. Where a set holds more silver than can be said for certain, the figure is the silver dollar alone and is marked as a floor. Weights and purity only: no price is invented.
+- **Other accounts keep searching while their people are away.** With Accounts on, each person's Coin Machine now starts with the server and keeps running, so their searches and alerts do not stop 30 minutes after they leave. Two new options: **Keep searching for everyone** (on) and **Accounts open at once** (6). Each running account uses about 300 MB of memory; turn the first off, or lower the second, on a small machine.
+- **Alerts can reach other accounts' phones.** The app's push key is now given to every account's Coin Machine, not only the owner's.
+- **The AI reads what the rules cannot.** Its automatic turns go first to sets, lots and collections the rules could not value, then to other unvalued listings with photos, then to rule Buys and close calls. Same model, same daily limit. A search's line says what it read.
+- **"Silver" is also a colour.** A title now has to name a coin or bullion, or a metal with a weight, a fineness or a face value: a "Silver Sheen Obsidian" crystal ball was being read as 27 grams of silver. Things that are not coins and were let in by earlier versions are removed once after the update, unless you saved them.
+
+Not seen running: the alerts on a phone, the AI's new choice (no AI ran in testing), and six accounts running at once on a real server.
+
 ## 0.17.0
 
 **A phone app that looks like one, and half the pages.** (`docs/AUDIT.md`, items 14 to 17, 19, 20, 24 to 26, 29, 30 and 32.)

@@ -59,6 +59,17 @@ configuration:
       Only with Accounts on. Lets other accounts use the Anthropic, eBay, PCGS and Numista keys set here, at
       your cost. They are then shown no key settings and cannot change them. Off, each person enters their own
       keys in their Settings page.
+  keep_searching:
+    name: Keep searching for everyone
+    description: >-
+      Only with Accounts on. Other accounts' searches keep running when they are not using Coin Machine, so
+      they can be told the moment something turns up. Uses about 300 MB of memory per account. Off, a
+      person's searches stop 30 minutes after they leave.
+  max_open_accounts:
+    name: Accounts open at once
+    description: >-
+      Only with Accounts on. How many other accounts can be running at the same time, 1 to 20. Each uses
+      about 300 MB of memory. Past this number, the one unused longest closes when someone else arrives.
   currency:
     name: Currency people here buy in
     description: >-
