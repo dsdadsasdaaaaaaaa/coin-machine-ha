@@ -1,5 +1,20 @@
 # Changelog
 
+## 0.17.0
+
+**A phone app that looks like one, and half the pages.** (`docs/AUDIT.md`, items 14 to 17, 19, 20, 24 to 26, 29, 30 and 32.)
+
+- **Deals on a phone.** Each listing is a card led by its photo, with the verdict on the photo, one large figure, and one sentence: what the seller wants, what it is worth, what to do. Two or three fit a screen where one did. The title shrinks as you scroll and the tabs stay under it.
+- **The deal page starts with the photos**, full width, to swipe through. Under them: the verdict in a sentence, one bar showing the asking price against what it is worth and the most to pay, and the three main reasons. A bar along the bottom holds Save, Pass and the one thing to do next, which on a local ad is **Message seller** with the message already written.
+- **Three parts instead of thirteen.** Why, Risks and The math each open as a sheet. What-if, "what this verdict hinges on", the offer ladder and the standing forms are gone from the page; "Something wrong?" in The math is where a misreading is corrected.
+- **The phone's own look.** Inside the iPhone app and on a phone, text is set in the phone's own typeface, the main button is gold, cards have depth, pages move into each other, and actions give a tap you can feel.
+- **My coins** is one page in place of Today, Pipeline, My coins and Your record: what to do next, what you hold, what you sold, with money out, value now and profit at the top. When nothing is rated Buy it shows the nearest things to a deal instead of an empty page.
+- **Check** is one page in place of Check a listing and Value a lot: take a photo, add photos, or paste a link or the listing's words. Whether it is one item or a lot is worked out for you.
+- **Set-up is four screens**, one question each, and the "analysis tool, not advice" note is shown once.
+- **Settings for someone on another person's Coin Machine is four things:** what you are doing, the most for one deal, your city, and alerts.
+- **Metal values** is the pile calculator, with Canadian pieces first.
+- **In the iPhone app (needs the new build):** one page before sign-in instead of three, and the second tab is My coins.
+
 ## 0.16.0
 
 **It reads real listings right.** A fresh set-up was run on 270 real Kijiji and Reddit listings and each one checked by hand; this release fixes what that found (`docs/AUDIT.md`, items 1 to 7, 10, 23, 26 to 28, 31 and 36).
