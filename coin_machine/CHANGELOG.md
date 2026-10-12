@@ -1,5 +1,11 @@
 # Changelog
 
+## 0.19.0
+
+- **A map of what is near you.** Deals has a Map button beside Worth a look, Saved and Passed. It draws your city in the middle with rings at 10, 25 and 50 km, and a pin for every listing that says where it is: green for a Buy, gold for one priced under its metal value, amber for a Watch, grey for a Pass. Press a pin for its card and Open; a pin with a number holds several listings in one place, and pressing it again moves to the next. Anything farther than 50 km sits on the edge with its distance written beside it. It is a drawing, not a street map: no map service is asked for anything and nothing about you leaves your Coin Machine.
+- **Where the positions come from.** Kijiji ads carry one, and it is kept to about 100 m. A listing already stored gets its position the next time Kijiji shows it; listings from other sources are counted under the map as having none.
+- **Kept out:** a toy sold as a "coin" (a Lego amulet reached the feed on a real search).
+
 ## 0.18.2
 
 - **More accounts no longer means more asked of Kijiji.** With Accounts on, everyone's Coin Machine leaves from your one address, and since 0.18.0 they all keep searching. They now share what they read: a Kijiji page one account read in the last ten minutes is used by the others instead of being asked for again, the five-second gap is kept between all of their requests together, and if Kijiji refuses one, all of them pause. Only public pages and the times of requests are shared, nothing of anyone's account.
