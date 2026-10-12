@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.18.2
+
+- **More accounts no longer means more asked of Kijiji.** With Accounts on, everyone's Coin Machine leaves from your one address, and since 0.18.0 they all keep searching. They now share what they read: a Kijiji page one account read in the last ten minutes is used by the others instead of being asked for again, the five-second gap is kept between all of their requests together, and if Kijiji refuses one, all of them pause. Only public pages and the times of requests are shared, nothing of anyone's account.
+
 ## 0.18.1
 
 - **The public pages show the app as it is now.** Every picture on the home page and the tour was retaken from this version (eight phone screens and six on a computer), the pages that no longer exist are gone from them, and the figures in the tour's examples are the ones the app gives today. They now say where listings come from (Kijiji near you, eBay, and anything shared or pasted) and that an account in Canada keeps its figures in Canadian dollars.
