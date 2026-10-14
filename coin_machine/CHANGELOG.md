@@ -1,5 +1,14 @@
 # Changelog
 
+## 0.20.0
+
+- **It knows Canada's key dates.** 52 Canadian coins that are worth far more than their metal are recognised by date and variety: the 1948, 1947 Maple Leaf, 1945 and other silver dollars, the 1921, 1890H, 1932 and 1948 50 cents, the 1875H and 1936 Dot 25 cents, the 1889 and 1893 Round Top 10 cents, the 1921 silver and the 1925 and 1926 Far 6 nickel 5 cents, the 1923 and 1925 cents, and more. Each is valued from what examples actually sold for at Canadian and US auctions in 2022 to 2026, and the deal page names those sales. A 1948 dollar on Kijiji used to be worth its silver to the app; now it is worth a 1948 dollar, and an uncertified one is held for checking (weight, size, the date under a glass) before it can be called a buy.
+- **Fakes and impossible coins.** A raw 1921 50 cents ("King of Canadian coins") is flagged as an altered date or a copy, as is any 1936 dot cent or 10 cents (three and five exist). A "1947 Maple Leaf" dollar is no longer read as a one-ounce silver Maple Leaf.
+- **Canada's grading services.** ICCS and CCCS are named as what they are instead of "third-tier holder", and a Canadian coin in one is valued at the grade on its certificate.
+- **Buying from home.** A coin sold from Canada to a buyer in Canada is no longer warned about as shipping "from outside the US".
+- **Fixed:** a card could say "Not valued yet" and "It is worth about $45" at once. It now says there is not enough to say what it is worth.
+- **For the iPhone app:** alerts about one listing carry its photo, with Open and Pass under them, and there is a home-screen widget with the best find and gold and silver. The server now sends what they need; they arrive with the app's next build (2.2), once it is through TestFlight.
+
 ## 0.19.0
 
 - **A map of what is near you.** Deals has a Map button beside Worth a look, Saved and Passed. It draws your city in the middle with rings at 10, 25 and 50 km, and a pin for every listing that says where it is: green for a Buy, gold for one priced under its metal value, amber for a Watch, grey for a Pass. Press a pin for its card and Open; a pin with a number holds several listings in one place, and pressing it again moves to the next. Anything farther than 50 km sits on the edge with its distance written beside it. It is a drawing, not a street map: no map service is asked for anything and nothing about you leaves your Coin Machine.
