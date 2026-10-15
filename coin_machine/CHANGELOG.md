@@ -1,5 +1,14 @@
 # Changelog
 
+## 0.21.2
+
+- **Canadian sample listings.** An account that keeps its books in Canadian dollars now gets its own samples: 18 Kijiji ads around Toronto, priced in Canadian dollars. They include silver quarters by face value, Maple Leafs, a 10 oz bar, Royal Canadian Mint coins, a 1967 set, a raw 1948 dollar, a replica and an estate jar. Switching currency swaps the samples rather than converting them.
+- **"Skip for now" keeps Canadian dollars.** The sample items in My coins had been stopping every new install from moving to Canadian dollars; they no longer count.
+- **The public site is Canadian.** Every picture on the home page and the tour was retaken from this version, and every example is a Kijiji sample in Canadian dollars. The worked example is 40 silver quarters at $300 in Mississauga, the three kinds of buyer meet over a 1965 proof-like set at $90, and the price slider runs on the quarters. The site says what the app reads as it is: Kijiji near you and what you bring it, eBay and Marketplace once they are connected, the AI when it is turned on.
+- **Reading**: a Voyageur dollar from 1968 to 1986 is read as the nickel dollar it is, even sold as "silver" (1972's was silver) or as "1970s"; a coin read only as a series is no longer said to "match no coin"; and a stacker's line too long for one row leaves its odds to Why.
+- Every listing is scored again after the update.
+- For the people working on it: a browser test on Canadian books, the Canadian samples and the map.
+
 ## 0.21.1
 
 - **Gold sold for cash at half its gold is treated as the likely fake it is.** A 1 oz American Gold Eagle asked $3,150 for cash in Leamington, with about $5,900 of gold in it, was given 4% odds of a fake, called "priced well" and marked "Below dealer bid" in green. Gold, platinum and palladium bullion (named coins, bars and rounds) no longer get the allowance a local cash sale gets for old coins, whose heirs do sell them cheap. The same ad now has 44% odds of a fake, and the advice is to test its weight and diameter in hand before offering up to $2,935. Silver bullion, old coins and world gold keep the local allowance.
