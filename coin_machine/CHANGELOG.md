@@ -1,5 +1,12 @@
 # Changelog
 
+## 0.21.1
+
+- **Gold sold for cash at half its gold is treated as the likely fake it is.** A 1 oz American Gold Eagle asked $3,150 for cash in Leamington, with about $5,900 of gold in it, was given 4% odds of a fake, called "priced well" and marked "Below dealer bid" in green. Gold, platinum and palladium bullion (named coins, bars and rounds) no longer get the allowance a local cash sale gets for old coins, whose heirs do sell them cheap. The same ad now has 44% odds of a fake, and the advice is to test its weight and diameter in hand before offering up to $2,935. Silver bullion, old coins and world gold keep the local allowance.
+- **"Worth" says "if genuine" when a fake is likely.** The card and the deal page say "If genuine, the gold alone is worth $5,929". The room under that figure is no longer drawn in green, and a price that low is no longer called "Below dealer bid". An offer that waits on a check says so ("check it, then offer up to $2,935") instead of "A buy at $2,935 or less".
+- Every listing is scored again after the update.
+- For the people working on it: the unit tests now pass on Windows (the 37 that need Linux file permissions or paths are skipped there and still run before every image), and selling from My coins has a browser test.
+
 ## 0.21.0
 
 **Everything from the audit of 15 October that was not the owner's to do.** (`docs/AUDIT.md`, items 1 to 136; what was left out is at the end.) After this update **everyone signs in once more** and is asked to accept the terms again.
