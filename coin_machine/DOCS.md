@@ -1,8 +1,8 @@
 # Coin Machine
 
-Coin Machine is an AI deal analyst for coin flippers, collectors and dealers. It reads listings, works out melt value, fees and profit in code, and gives each deal a verdict. As an add-on it runs inside Home Assistant, so your hunts keep running with no browser open, and new BUY deals reach your phone as Home Assistant notifications.
+Coin Machine is an AI deal analyst for coin flippers, collectors and dealers. It reads listings, works out melt value, fees and profit in code, and gives each deal a verdict. As an add-on it runs inside Home Assistant, so your searches keep running with no browser open, and new Buys reach your phone through the iPhone app or Home Assistant notifications.
 
-It never bids, buys or messages anyone. Facebook Marketplace and similar sites stay manual: you capture a listing yourself and the app analyses it.
+It never bids, buys or messages anyone. It reads Kijiji by itself, and Facebook Marketplace once you sign in to Facebook on the server (below); anything else you send it yourself on **Check**.
 
 ## Install
 
@@ -15,11 +15,11 @@ The app's image is private, so Home Assistant needs a read-only GitHub token to 
 5. Turn on **Watchdog** and choose **Start**.
 6. Choose **Open web UI**, or turn on **Show in sidebar** and open **Coin Machine** from Home Assistant's sidebar. Home Assistant has already signed you in, so no password is asked.
 
-Nothing on the **Configuration** tab is required. A Reddit hunt is added on the first start and brings in live sale posts every 30 minutes with no keys. To go further, paste keys in the app's **Settings** page (or on the Configuration tab): an [Anthropic API key](https://console.anthropic.com/settings/keys) for photo analysis and deal reports, and [eBay keys](https://developer.ebay.com/my/keys) for eBay hunts.
+Nothing on the **Configuration** tab is required. The first time you open the app it asks four questions (what you are doing, what to find, where you buy, the most for one deal) and makes the searches from them; nothing is searched before that. Kijiji needs no keys. To go further, paste keys in the app's **Settings** page (or on the Configuration tab): an [Anthropic API key](https://console.anthropic.com/settings/keys) for photo analysis and deal reports, and [eBay keys](https://developer.ebay.com/my/keys) for eBay searches.
 
 If the install fails with an "unauthorized" or "denied" error, the registry entry is missing or the token lacks **read:packages** or has expired. Fix it under **Registries** and install again.
 
-Supported hardware: 64-bit Home Assistant systems (`amd64`, such as an Intel NUC or a virtual machine, and `aarch64`, such as a Raspberry Pi 4 or 5 running the 64-bit OS).
+Supported hardware: 64-bit Intel or AMD Home Assistant systems (`amd64`), such as an Intel NUC or a virtual machine. A Raspberry Pi (`aarch64`) is not built for.
 
 ## Options
 
@@ -29,7 +29,7 @@ You can leave every option as it is.
 |---|---|
 | `access_password` | The password for signing in, at least 8 characters. If you leave it empty, the app creates one on its first start and shows it in the **Log** tab on every start. |
 | `anthropic_api_key` | Your Claude API key, from the [Anthropic console](https://console.anthropic.com/settings/keys). Needed for photo analysis and deal reports. |
-| `ebay_client_id`, `ebay_client_secret` | Your eBay developer keyset (App ID and Cert ID), from [eBay's developer keys page](https://developer.ebay.com/my/keys). Needed for eBay hunts; the Reddit hunt needs no keys. |
+| `ebay_client_id`, `ebay_client_secret` | Your eBay developer keyset (App ID and Cert ID), from [eBay's developer keys page](https://developer.ebay.com/my/keys). Needed for eBay searches; Kijiji, Marketplace and Reddit need no keys. |
 | `ebay_environment` | `production` for real listings, `sandbox` for eBay's test site. A sandbox keyset (its App ID contains `-SBX-`) only works with `sandbox` and returns test listings, not real ones. |
 | `pcgs_api_token` | PCGS certificate and price guide lookups. |
 | `numista_api_key` | Numista catalogue estimates on world-coin deals, shown as estimates, never as sales. |
@@ -78,12 +78,12 @@ their name in a blocked-sellers list) is deleted, in every account.
 
 ## Kijiji and Facebook Marketplace
 
-**Kijiji** needs nothing set up: on the Hunts screen add a hunt and choose **Kijiji** under **Where to search**, or add the starter hunt **Kijiji silver and gold**. Coin Machine reads Kijiji's public search pages and says who it is when it does. If Kijiji refuses a request, Kijiji hunts stop for six hours and say so.
+**Kijiji** needs nothing set up: the answers to the four questions make a Kijiji search around your city. It looks every 10 minutes for what is newest and in turn through its own words every 30, reads every new ad whole, and says who it is when it does. With several accounts, they share what they read. If Kijiji refuses a request, Kijiji searches stop for six hours and say so.
 
 **Facebook Marketplace** can be read two ways.
 
-- **From your own browser, for every account.** On a computer, with Marketplace open, click the **Send to Coin Machine** bookmark on a search or category page (Analyze has the bookmark to drag to your bookmarks bar). Every listing on screen is sent; you keep the ones you want and they join the feed.
-- **By itself, for the owner only.** The add-on carries a browser of its own. On the Hunts screen open **Facebook Marketplace**, press **Sign in to Facebook** and sign in yourself in the picture of that browser: click a field, type into the box under the picture, press Send. Then add a hunt with **Facebook Marketplace** under **Where to search**. Your password goes to that browser and is not kept by Coin Machine; **Sign out** removes the browser's profile from this server.
+- **From your own browser, for every account.** On a computer, with Marketplace open, click the **Send to Coin Machine** bookmark on a search or category page (Check has the bookmark to drag to your bookmarks bar). Every listing on screen is sent; you keep the ones you want and they join the feed.
+- **By itself, for the owner only.** The add-on carries a browser of its own. On the Hunts screen open **Facebook Marketplace**, press **Sign in to Facebook** and sign in yourself in the picture of that browser: click a field, type into the box under the picture, press Send. A Marketplace search joins your searches by itself once you are signed in (at most 32 pages a day). Your password goes to that browser and is not kept by Coin Machine; **Sign out** removes the browser's profile from this server.
 
 Facebook forbids automated reading, signed in or not, and restricts or disables accounts it catches doing it. Coin Machine's browser does not hide what it is, and the first time Facebook asks it to sign in again or to confirm who is there, every Marketplace hunt stops until you sign in again. The account you sign in with is at risk; that choice is yours.
 
@@ -101,9 +101,9 @@ Coin Machine holds one person's deals, settings and keys. Turn **Accounts** on a
 What to know:
 
 - **Each account is separate.** Its own listings, hunts, settings, inventory and keys. Nobody sees anyone else's, including you.
-- **A person's Coin Machine opens when they sign in** and closes after 30 minutes without use, so their hunts run while they are using it. Yours runs all the time, as before.
-- **Memory.** Each open one uses about 300 MB. Up to six are open at the same time; a seventh person is asked to wait a minute.
-- **Keys.** Other accounts enter their own Anthropic and eBay keys in their Settings page. With **Share my keys with other accounts** on they use yours, and what they spend is billed to you. Their Settings page then has no AI, eBay or PCGS section, nothing tells them to add a key, and they cannot change the keys or raise what the AI may spend: each account's automatic analysis stays at the built-in daily budget, and analyses they start themselves are not limited.
+- **Everyone's Coin Machine keeps running**, so their hunts and alerts carry on while they are away (`keep_searching`, on unless you turn it off; off, a person's opens when they sign in and closes after 30 minutes without use). Yours runs all the time, as before.
+- **Memory.** Each open one uses about 300 MB. Up to **max_open_accounts** (six unless you change it) are open at the same time; past that, the one unused longest closes when someone else arrives, and if all were used in the last two minutes the newcomer is asked to wait a minute.
+- **Keys.** Other accounts enter their own Anthropic and eBay keys in their Settings page. With **Share my keys with other accounts** on they use yours, and what they spend is billed to you. Their Settings page then has no AI, eBay or PCGS section, nothing tells them to add a key, and they cannot change the keys or raise what the AI may spend: everything each account's AI does, the analyses they start themselves included, counts against the built-in daily budget ($2 a day), and the paid AI test is yours alone to run.
 - **Yours only:** phone alerts, Home Assistant sensors and the options on this add-on's Configuration tab.
 - **Inside Home Assistant** the sidebar entry now shows a link to the public address instead of the app itself: everyone, you included, signs in at the one address.
 - **Passwords.** A person changes their own on their account page (`/account`; the message links to it). You can give them a new one, disable an account, or delete it with its data, on the accounts page. Your own password stays the `access_password` option.
@@ -147,7 +147,9 @@ With several phones, or none, alerts go to Home Assistant's notification list un
 
 The add-on keeps everything in its own data folder: the database, uploaded photos and the app's settings. Home Assistant backups include that folder, so a normal Home Assistant backup (**Settings > System > Backups**) saves your deals, positions, hunts and keys. The add-on stops for a few seconds while a backup runs so the database is copied in a consistent state, then starts again.
 
-Restoring a Home Assistant backup that includes the add-on brings everything back.
+Restoring a Home Assistant backup that includes the add-on brings everything back, for every account at once.
+
+Coin Machine also backs up its own database once a day while it runs, and before every upgrade, and keeps the copies for four weeks (API keys are left out of them). To go back to one, open **Settings > Data safety** and press **Restore** beside it: Coin Machine checks the copy, stops for about a minute and starts again with it, and keeps the database it replaced on the server. With accounts on, you restore any account's backup, your own included, on the accounts page (`/accounts`), which opens even when that Coin Machine cannot start. Other accounts cannot restore anything themselves.
 
 ## Troubleshooting
 
@@ -156,4 +158,5 @@ Restoring a Home Assistant backup that includes the add-on brings everything bac
 - **The page does not load on the phone.** Check the phone is on the home Wi-Fi, not mobile data, and that the address uses port 3000.
 - **A public address shows a Cloudflare error.** 1033 means the Cloudflared add-on is not running or not signed in: read its **Log** tab. 502 means it cannot reach Coin Machine: check this add-on is started and the `service` line is right.
 - **"Too many Coin Machines are open right now."** As many accounts as **Accounts open at once** allows are in use. It clears when one has been unused for a couple of minutes.
+- **"Coin Machine could not start".** That account's Coin Machine cannot open its database, and the message says why: a database upgraded by a newer version (after going back to an older one), a damaged database, or a full disk. On the accounts page (`/accounts`) that account shows the same reason, with **Restore a backup** and **Try again**. The person whose Coin Machine it is is told only that it could not start and that you can see why.
 - **No phone notifications.** Open **Settings > Home Assistant** in the app: it shows the phones Home Assistant lists and where alerts go. **Send a test notification** names the service it called and Home Assistant's HTTP answer. Check also that hunts are running (the app's Hunts page shows the last run).

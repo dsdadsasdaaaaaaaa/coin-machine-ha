@@ -1,5 +1,53 @@
 # Changelog
 
+## 0.21.0
+
+**Everything from the audit of 15 October that was not the owner's to do.** (`docs/AUDIT.md`, items 1 to 136; what was left out is at the end.) After this update **everyone signs in once more** and is asked to accept the terms again.
+
+**The first ten minutes**
+- **New today.** The top of Deals lists every ad put up in the last day, whatever its verdict, one line each with its photo, so a lot the rules cannot value is still seen by someone who can.
+- **The app is right before it finds a Buy.** With nothing worth a look, Deals shows the passed listings that came closest, each with its verdict in a sentence, instead of an empty box.
+- **Nothing you turned down is in your feed.** No search runs before the questions are answered (the US Reddit starter is gone), and a search you switched off takes its listings with it. What you saved stays.
+- **A coin you type into Check is in hand** unless you say it is shipped: no shipping, no odds it never arrives. One tap switches it. A 1967 silver dollar at $40 against $48 of silver was a Pass with a max of $24; it now says what it is.
+- **The introduction's defaults fit a Kijiji buyer**: all six kinds of coin and all three ways of selling ticked, $500 for one deal, and "Skip for now" keeps Canadian dollars.
+
+**Seeing more, sooner**
+- **Every new ad is read whole as it arrives** (up to 12 a look, and older ads a few at a time), so the rules, the AI and you see the same text and photos. The broad newest-first search runs every 10 minutes, your own words every 30. Kijiji is asked about twice as often as before, roughly ten pages an hour for a city.
+- **Searches for people who do not know what they have**: old coins, coin collection, estate coins, foreign coins, lot of coins, inherited coins, and in French where French is spoken. "Anything underpriced" uses these lot words, not the bare word "coins" that brought vases.
+- **Facebook Marketplace joins your searches by itself** once the server is signed in to Facebook, without asking the questions again. Sold and pending ads are skipped, a Marketplace listing not seen for five days is presumed gone, and every read is logged.
+- **The Looking-for card says the yield**: "Checked 12m ago · This week: 35 seen, 1 worth a look". "Look now" on Deals runs your searches; the Run hunts button is gone.
+
+**Figures you act on**
+- **A pass says the money**: "it loses $88 after selling", "under its silver, but only $1 in it after selling". A Watch priced well says what holds it back ("priced well at $50, but not sure enough of it for a Buy"), and one held only by your per-deal limit says "Over your $500 limit" instead of a max price nobody would pay.
+- **Coins sold by weight** (a pound of dimes, 500 g of Canadian 80%) are valued as coins of their silver, not as fine silver. Small gold bars take a small bar's dealer price. A price "each" is no longer multiplied by the count.
+- **Canadian costs**: Canada Post's price for a parcel (C$25.54 with fuel surcharge and HST), eBay.ca's fees with HST, and 13% HST on an eBay purchase from a Canadian seller. Sold prices marked C$ stay Canadian; an AI reading made in US dollars is converted once and labelled.
+- **Canadian silver by date and grade**: 17 common-date tables for Victoria to George VI silver from certified sales, and five varieties (1935 short water lines and double XXV, 1951 Arnprior, 1899 large 9s dime, 1936 bar dime).
+- **Reading Canadian ads**: "silver dollar" is Canada's where Canada struck one that year, a two-date anniversary title ("1774-1999") is read as its later year, a dealer's name such as Silver Gold Bull is not a second metal, and a coin weighing what a later issue weighs is no longer called a fake.
+- **Offers that stall**: three days with no reply brings a nudge, seven passes the listing by itself. Bought it and Sold it are one short step each, filled in with the engine's fees and shipping.
+- **Alerts about a listing under its metal value** only when there is money in it: a Watch with a profit of 10% or more, never a Pass.
+- **The AI** rests after seven days unopened instead of one, never spends past its daily budget, costs about a fifth less to read a cold listing, and on someone else's server the paid check is the owner's to run.
+
+**Simpler pages**
+- **A deal** has its actions right under the price card, two parts instead of three (Why and The math), the money in two sentences ("Pay up to $62. You would make about $28, or $26 if it grades low"), and two "?" on a phone where there were ten. Confidence is no longer a meter: a Watch says when it is not sure enough for a Buy.
+- **Pass means Passed**: what you pass goes to the Passed tab, where you can restore it. Save, Pass and Add to My coins are the only three words for those actions.
+- **Deals on a phone**: filters in a sheet, a short note on what the tabs mean, counts that stay put. **Check** leads with the title and price when there is no AI, and its button says "Check it". **My coins** has one gold button, the next step, and one step per row. **Settings**' Advanced is eight parts, the dealer rates moved there, and **Change** on the Looking-for card opens the questions over the page you are on.
+- **Gone**: the Guide, Sets, Want list, Advisor and Show kit pages, and the code behind them. Their addresses open Deals. Two money errors went with them, and a third was fixed on the way: Metal values' key-date values were US dollars under a Canadian "$".
+
+**The server**
+- **Restore a backup from Settings, Data, or from the accounts page**, even when a copy cannot start. A copy that cannot start says why, the owner's page offers Try again, and five crashes no longer stop the whole add-on.
+- **Sign-in is limited**: five wrong passwords a minute from one address, and a username tried too often from anywhere is held for a minute, doubling to 15. A device that signed in before is not held. A changed password ends every session.
+- **eBay's account-deletion notices are acted on only when eBay's signature checks.** Set the eBay keys before registering the endpoint, or eBay's test notice is refused.
+- **Testers see no server paths**, usernames cannot take the names of the server's own files, uploads are capped at 16 MB, and a backup that failed or stopped is shown in amber.
+- **Releases are tested first**: the image is built only after the unit tests pass on Linux. It is built for Intel and AMD machines (amd64) only, which is what this server is; a Raspberry Pi image is no longer made.
+
+**Terms**: they now name Kijiji, Reddit's sale boards and (once the owner signs in) Facebook Marketplace as read from public pages, say an account can live on someone else's server, what is kept about you and who deletes an account. `docs/LEGAL.md` lists what is still for the owner and a lawyer.
+
+**iPhone app (needs the next build)**: it asks once whether to send alerts, links open in their own apps, signing out lets go of the alerts, the badge counts what you have not seen, and it is an iPhone app (no iPad layout). The server already checks each phone's alert set-up with Apple and says when it is wrong.
+
+**Not done**: modern MS69 and MS70 bullion by year (the sales sites refused automated reads, and that stands); the Chromium reader still runs as root, with a cleaner environment only; a failing backup does not yet send an alert; GST and HST at the border on US purchases are still an estimate; proof and double-dollar sets, $20-for-$20 and worn Victorian silver have no sales table; the public site still shows 11 October's US samples (next release). The owner's: the Apple push key, eBay production keys, a Marketplace sign-in, the TestFlight build, and one purchase taken from offer to sale.
+
+Not seen running: eBay's signed notices, a restore on the server, the first tested image build on Linux, Marketplace on the server, any AI change (no AI call was made), the iPhone app changes. The reading and the pages were seen on 64 real Toronto Kijiji ads on a fresh copy.
+
 ## 0.20.0
 
 - **It knows Canada's key dates.** 52 Canadian coins that are worth far more than their metal are recognised by date and variety: the 1948, 1947 Maple Leaf, 1945 and other silver dollars, the 1921, 1890H, 1932 and 1948 50 cents, the 1875H and 1936 Dot 25 cents, the 1889 and 1893 Round Top 10 cents, the 1921 silver and the 1925 and 1926 Far 6 nickel 5 cents, the 1923 and 1925 cents, and more. Each is valued from what examples actually sold for at Canadian and US auctions in 2022 to 2026, and the deal page names those sales. A 1948 dollar on Kijiji used to be worth its silver to the app; now it is worth a 1948 dollar, and an uncertified one is held for checking (weight, size, the date under a glass) before it can be called a buy.
