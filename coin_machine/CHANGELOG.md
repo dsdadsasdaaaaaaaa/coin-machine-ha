@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.22.1
+
+- **eBay joins your searches by itself.** Connecting eBay after answering the questions used to add nothing until the questions were answered again. Now, if you answered **Shipped to me** or **Either**, eBay's searches (the newest listings, and auctions closing within hours) are added beside the others within a few minutes of the keys working, with nothing else changed. With **Pick up near me**, the Looking for card offers **Search eBay too**: one tap adds them and makes your answer Either. An eBay search you delete by hand is not added back by itself; the card offers it again.
+
 ## 0.22.0
 
 - **What a coin from abroad costs at the Canadian border.** On Canadian-dollar books, a coin shipped from the United States or anywhere outside Canada is now costed with the tax Canada charges at the border, worked out by the app instead of the old US-style guess of a brokerage fee and 3% duty: the GST or HST and the provincial tax the CBSA collects for your city's province (Ontario 13%, Quebec 5% and 9.975%, British Columbia 5% and 7%, Alberta 5%, and so on), on the price paid but not the shipping, plus Canada Post's $9.95 handling fee. Coins enter duty free. Gold and platinum of 99.5% and silver of 99.9% sold as bullion (a Maple Leaf, a Silver Eagle, a .999 bar) owe nothing, and neither does a parcel worth $20 or less; 90% silver, sterling and a 22-karat Gold Eagle are taxed. The deal page shows it as "At the border", an estimate and not tax advice, and the max price is worked out with it. Import charges eBay states still take its place, now also when eBay.ca states them in Canadian dollars.

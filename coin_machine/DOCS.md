@@ -73,6 +73,10 @@ seller's username and feedback numbers with a listing, so it subscribes, and it 
 4. Copy the Production **App ID** and **Cert ID** into `ebay_client_id` and `ebay_client_secret` above, set
    `ebay_environment` to `production`, and restart.
 
+Once the keys work, eBay joins your searches by itself if you answered **Shipped to me** or **Either** to where
+you buy: the newest listings, and auctions closing within hours. With **Pick up near me**, the Looking for card
+offers **Search eBay too**, one tap. Nothing else about your searches changes.
+
 From then on, when an eBay member closes their account, what Coin Machine holds of them (their listings, and
 their name in a blocked-sellers list) is deleted, in every account.
 
