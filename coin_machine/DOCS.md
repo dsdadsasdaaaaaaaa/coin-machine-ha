@@ -89,6 +89,8 @@ Facebook forbids automated reading, signed in or not, and restricts or disables 
 
 A Marketplace listing found either way has a title, a price and a place, no photos. Open the one that scores well on Facebook and send it on its own for the full analysis.
 
+How the add-on's browser is kept apart: it is Chromium, and it runs as a user of its own, `browser` (uid 1200), not as root like the rest of the add-on. Its profile, with your Facebook session, is in `/data/coin-machine-browser` (moved there by itself from `/data/coin-machine/marketplace-browser` the first time it starts after the update, so you stay signed in). Chromium's own sandbox stays off: it needs user namespaces, which the Docker seccomp profile the Supervisor runs add-ons with blocks, and an add-on cannot change that. What contains it instead is that user, which can reach its profile and nothing of Coin Machine's (not the database, the keys, the password or `/data/options.json`), the bare environment it is started with (no keys or tokens in it), and that it can load only Facebook's own addresses.
+
 ## Accounts: one address for several people
 
 Coin Machine holds one person's deals, settings and keys. Turn **Accounts** on and each person gets their own, behind one address and a sign-in.
